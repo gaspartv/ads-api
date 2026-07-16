@@ -1,0 +1,400 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  deletedAt       DateTime? @map("deleted_at")
+  disabledAt      DateTime? @map("disabled_at")
+  name            String
+  description     String?
+  whatsappNumber  String    @unique @map("whatsapp_number")
+
+  @@map("companies")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  expiresAt    DateTime @map("expires_at")
+  lastActivity DateTime @default(now()) @map("last_activity")
+  ip           String?
+  agent        String?
+  isValid      Boolean  @default(true) @map("is_valid")
+
+  User   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+enum UserType {
+  CLIENT
+  ADMIN
+}
+
+model User {
+  id           String    @id @default(cuid())
+  code         String    @unique
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  deletedAt    DateTime? @map("deleted_at")
+  disabledAt   DateTime? @map("disabled_at")
+  firstName    String    @map("first_name")
+  lastName     String?   @map("last_name")
+  email        String    @unique
+  passwordHash String    @map("password_hash")
+  type         UserType  @default(CLIENT)
+
+  Logs     Log[]
+  Sessions Session[]
+
+  @@map("users")
+}
+
+model Log {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now()) @map("created_at")
+  method     String
+  endpoint   String
+  statusCode Int      @map("status_code")
+  request    Json?
+  response   Json?
+
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String? @map("user_id")
+
+  @@map("logs")
+}
+
+model ProductTibiaCoins {
+  id               String      @id @default(cuid())
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+  disabledAt       DateTime?   @map("disabled_at")
+  name             String      @default("Tibia Coins")
+  slug             String      @unique @default("tibia-coins")
+  description      String?
+  amount           Int         @default(0)
+  seoTitle         String?     @map("seo_title")
+  seoDescription   String?     @map("seo_description")
+
+  Variables    ProductTibiaCoinsVariable[]
+  StockBatches ProductTibiaCoinsStockBatch[]
+
+  @@map("product_tibia_coins")
+}
+
+model ProductTibiaCoinsVariable {
+  id               String      @id @default(cuid())
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+  disabledAt       DateTime?   @map("disabled_at")
+  description      String?
+  price            Int         @default(0)
+  promotionalPrice Int?        @map("promotional_price")
+  min              Int?
+  max              Int?
+  url              String      @default("/uploads/system/tibia-coins.gif")
+
+  ProductTibiaCoins   ProductTibiaCoins @relation(fields: [productTibiaCoinsId], references: [id])
+  productTibiaCoinsId String            @map("product_tibia_coins_id")
+
+  @@map("product_tibia_coins_variable")
+}
+
+model ProductTibiaCoinsStockBatch {
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  initialAmount Int       @map("initial_amount")
+  currentAmount Int       @map("current_amount")
+  costPrice     Int       @map("cost_price")
+  supplierName  String?   @map("supplier_name")
+
+  ProductTibiaCoins   ProductTibiaCoins @relation(fields: [productTibiaCoinsId], references: [id])
+  productTibiaCoinsId String            @map("product_tibia_coins_id")
+
+  @@map("product_tibia_coins_stock_batches")
+}
+
+enum Vocations {
+  NONE
+  KNIGHT
+  SORCERER
+  PALADIN
+  DRUID
+  MONK
+}
+
+enum PvpType {
+  OPEN_PVP
+  OPTIONAL_PVP
+  HARDCORE_PVP
+  RETRO_OPEN_PVP
+  RETRO_HARDCORE_PVP
+}
+
+enum BattleyeType {
+  YELLOW
+  GREEN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum Location {
+  EUA
+  REINO_UNIDO
+  BRASIL
+  OCEANIA
+}
+
+model World {
+  id               String      @id @default(cuid())
+  name String
+  location Location
+  battleye BattleyeType?
+  pvpType PvpType
+
+  ProductCharacters ProductCharacter[]
+
+  @@map("worlds")
+}
+
+enum CharmType {
+  MAJOR
+  MINOR
+}
+
+model Charm {
+  id               String      @id @default(cuid())
+  name String
+  image String
+  description String
+  type CharmType
+
+  ProductCharacters ProductCharacter[]
+
+  @@map("charms")
+}
+
+model OutfitGender {
+  id               String      @id @default(cuid())
+  gender Gender
+  outfit String
+  addonOne String?
+  addonTwo String?
+  full String?
+
+  Outfit Outfit @relation(fields: [outfitId], references: [id])
+  outfitId String @map("outfit_id") 
+
+  @@unique([gender, outfitId])
+  @@map("outfit_genders")
+}
+
+model Outfit {
+  id               String      @id @default(cuid())
+  name String
+  type String
+
+  Genders OutfitGender[]
+  Characters MapCharacterOutfits[]
+
+  @@map("outfits")
+}
+
+model Mount {
+  id               String      @id @default(cuid())
+  name String
+  speed Int @default(10)
+  image String
+
+  Characters ProductCharacter[]
+
+  @@map("mounts")
+}
+
+enum OutfitLevel {
+  OUTFIT
+  ADDON_ONE
+  ADDON_TWO
+  FULL
+}
+
+model MapCharacterOutfits {
+  id               String      @id @default(cuid())
+  nivel OutfitLevel @default(OUTFIT)
+
+  Outfit Outfit @relation(fields: [outfitId], references: [id])
+  outfitId String @map("outfit_id")
+
+  Character ProductCharacter @relation(fields: [characterId], references: [id])
+  characterId String @map("character_id")
+
+  @@unique([outfitId, characterId])
+  @@map("map_character_outfits")
+}
+
+model ProductCharacter {
+  id               String      @id @default(cuid())
+  code             String      @unique
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+  deletedAt        DateTime?   @map("deleted_at")
+  disabledAt       DateTime?   @map("disabled_at")
+  isFeatured       Boolean     @default(false) @map("is_featured")
+  order            Int         @default(0)
+  
+  // --- DADOS COMERCIAIS ---
+  title            String
+  slug             String      @unique
+  description      String?
+  price            Int         @default(0)
+  promotionalPrice Int?        @map("promotional_price")
+  priceTibiaCoins  Int?        @map("price_tibia_coins")
+  promotionalPriceTibiaCoins   Int?        @map("promotional_price_tibia_coins")
+  
+  // --- SEO ---
+  seoTitle         String?     @map("seo_title")
+  seoDescription   String?     @map("seo_description")
+  
+  // --- DADOS GERAIS DO PERSONAGEM ---
+  vocation Vocations
+  level Int
+  gender  Gender
+  loyalty Int
+  World   World   @relation(fields: [worldId], references: [id])
+  worldId String  @map("world_id")
+  
+  // --- SKILLS & COMBATE (Colunas separadas para facilitar filtros/indexação no front-end) ---
+  magicLevel       Int       @default(0) @map("magic_level")
+  fistFighting     Int       @default(10) @map("fist_fighting")
+  swordFighting    Int       @default(10) @map("sword_fighting")
+  axeFighting      Int       @default(10) @map("axe_fighting")
+  clubFighting     Int       @default(10) @map("club_fighting")
+  distanceFighting Int       @default(10) @map("distance_fighting")
+  shielding        Int       @default(10) @map("shielding")
+
+  // --- GAMEPLAY & ATIVOS ---
+  // CHARMS //
+  charmPoints      Int       @default(0) @map("charm_points")
+  charmExpansion   Boolean   @default(false) @map("charm_expansion")
+  inventoryValue   Int?      @map("inventory_value") // Estimativa em KKs dos itens que acompanham a conta
+
+  // --- SEGURANÇA & STATUS DA CONTA (O diferencial da intermediação) ---
+  transferable     Boolean   @default(true) // O char pode dar transfer hoje?
+  transferAvailableAt DateTime? @map("transfer_available_at") // Se falso, quando libera?
+  premiumEndsAt    DateTime? @map("premium_ends_at") // Status da P.A.
+  hasRecoveryKey   Boolean   @default(false) @map("has_recovery_key") // Conta não registrada / RK em branco?
+  safeAddress      Boolean   @default(true) @map("safe_address") // Conta sem endereço seguro
+
+  metadata         Json?
+
+  Charms       Charm[]
+  Outfits      MapCharacterOutfits[]
+  Mounts       Mount[]
+  Images       Image[]
+
+  @@map("product_characters")
+}
+
+enum ProductType {
+  CHARACTER
+  ACCOUNT
+  TIBIA_COINS
+}
+
+model Product {
+  id               String      @id @default(cuid())
+  type             ProductType @default(TIBIA_COINS)
+  code             String      @unique
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+  deletedAt        DateTime?   @map("deleted_at")
+  disabledAt       DateTime?   @map("disabled_at")
+  isFixed          Boolean     @default(false) @map("is_fixed")
+  featured         Boolean     @default(false)
+  order            Int         @default(0)
+  name             String
+  slug             String      @unique
+  description      String?
+  metadata         Json?
+  price            Int         @default(0)
+  promotionalPrice Int?
+  amount           Int         @default(0)
+  multiples        Int         @default(1)
+  seoTitle         String?
+  seoDescription   String?
+
+  Categories   Category[]
+  Images       Image[]
+  StockBatches StockBatch[]
+
+  @@map("products")
+}
+
+model StockBatch {
+  id            String  @id @default(cuid())
+  initialAmount Int     @map("initial_amount")
+  currentAmount Int     @map("current_amount")
+  costPrice     Int     @map("cost_price")
+  supplierName  String? @map("supplier_name")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  Product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String  @map("product_id")
+
+  @@map("stock_batches")
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  code        String    @unique
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+  disabledAt  DateTime? @map("disabled_at")
+  name        String
+  description String?
+
+  Products Product[]
+  Images   Image[]
+
+  @@map("categories")
+}
+
+model Image {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  index     Int      @default(0)
+  url       String   @default("/uploads/system/no-image.jpg")
+
+  Category   Category? @relation(fields: [categoryId], references: [id])
+  categoryId String?   @map("category_id")
+
+  Product   Product? @relation(fields: [productId], references: [id])
+  productId String?  @map("product_id")
+
+  ProductCharacter ProductCharacter? @relation(fields: [productCharacterId], references: [id])
+  productCharacterId String? @map("product_character_id")
+
+  @@unique([index, categoryId, productId, productCharacterId])
+  @@map("images")
+}
