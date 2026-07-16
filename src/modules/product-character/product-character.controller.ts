@@ -24,6 +24,12 @@ export class ProductCharacterController {
   constructor(private readonly service: ProductCharacterService) {}
 
   @IsPublic()
+  @Get('find/:slug/public')
+  findPublic(@Param('slug') slug: string) {
+    return this.service.findPublic(slug);
+  }
+
+  @IsPublic()
   @Get('list/public')
   listPublic(@Query() query: ProductCharacterListDto) {
     return this.service.list(query);

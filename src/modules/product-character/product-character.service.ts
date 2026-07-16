@@ -26,6 +26,73 @@ const pump = util.promisify(pipeline);
 export class ProductCharacterService {
   constructor(private readonly prisma: PrismaService) {}
 
+  async findPublic(slug: string) {
+    const character = await this.prisma.productCharacter.findUnique({
+      where: { slug },
+      include: {
+        Images: {
+          select: {
+            id: true,
+            url: true,
+          },
+          orderBy: { index: 'desc' },
+        },
+        World: true,
+        Charms: true,
+        Mounts: true,
+        Outfits: {
+          include: {
+            Outfit: {
+              include: {
+                Genders: true,
+              },
+            },
+          },
+        },
+      },
+    });
+
+    return {
+      ...character,
+      Images: character?.Images.map((image) => ({
+        ...image,
+        url: envConfig.BACKEND_URL + image.url,
+      })),
+      Charms: character?.Charms.map((charm) => ({
+        ...charm,
+        image: envConfig.BACKEND_URL + charm.image,
+      })),
+      Mounts: character?.Mounts.map((mount) => ({
+        ...mount,
+        image: envConfig.BACKEND_URL + mount.image,
+      })),
+      Outfits: character?.Outfits.map((mapOutfit) => {
+        const outfitGenders = mapOutfit.Outfit.Genders;
+        const charGender = character.gender; // "MALE" or "FEMALE"
+        const genderMatch = outfitGenders.find((g) => g.gender === charGender);
+
+        let imageUrl: string | null = null;
+        if (genderMatch) {
+          if (mapOutfit.nivel === 'FULL' && genderMatch.full)
+            imageUrl = genderMatch.full;
+          else if (mapOutfit.nivel === 'ADDON_TWO' && genderMatch.addonTwo)
+            imageUrl = genderMatch.addonTwo;
+          else if (mapOutfit.nivel === 'ADDON_ONE' && genderMatch.addonOne)
+            imageUrl = genderMatch.addonOne;
+          else imageUrl = genderMatch.outfit;
+        }
+
+        return {
+          ...mapOutfit,
+          Outfit: {
+            ...mapOutfit.Outfit,
+            imageUrl: imageUrl ? envConfig.BACKEND_URL + imageUrl : null,
+          },
+        };
+      }),
+    };
+  }
+
   async list(pagination: ProductCharacterListDto) {
     const where: Prisma.ProductCharacterWhereInput = { deletedAt: null };
 
@@ -178,10 +245,11 @@ export class ProductCharacterService {
             connect: dto.mountsId?.map((id) => ({ id })) || [],
           },
           Outfits: {
-            create: dto.outfits?.map((outfit) => ({
-              outfitId: outfit.id,
-              nivel: outfit.level,
-            })) || [],
+            create:
+              dto.outfits?.map((outfit) => ({
+                outfitId: outfit.id,
+                nivel: outfit.level,
+              })) || [],
           },
         },
       });

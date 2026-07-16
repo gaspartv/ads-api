@@ -289,6 +289,7 @@ model ProductCharacter {
   clubFighting     Int       @default(10) @map("club_fighting")
   distanceFighting Int       @default(10) @map("distance_fighting")
   shielding        Int       @default(10) @map("shielding")
+  fishing          Int       @default(10) @map("fishing")
 
   // --- GAMEPLAY & ATIVOS ---
   // CHARMS //
