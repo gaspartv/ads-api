@@ -15,6 +15,7 @@ import { ProductTibiaCoinsModule } from './modules/product-tibia-coins/product-t
 import { CompanyModule } from './modules/company/company.module';
 import { ProductCharacterModule } from './modules/product-character/product-character.module';
 import { InfoModule } from './modules/info/info.module';
+import { ProductAccountLoyaltyModule } from './modules/product-account-loyalty/product-account-loyalty.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { InfoModule } from './modules/info/info.module';
     InfoModule,
     LogModule,
     ProductModule,
+    ProductAccountLoyaltyModule,
     ProductCharacterModule,
     ProductTibiaCoinsModule,
     ReportsModule,

@@ -1,0 +1,12 @@
+import { IsEnum, IsOptional, IsString } from 'class-validator';
+import { PaginationDto } from 'src/common/pagination/pagination.dto';
+
+export class ProductAccountLoyaltyListDto extends PaginationDto {
+  @IsOptional()
+  @IsString()
+  search?: string;
+
+  @IsOptional()
+  @IsEnum(['ativo', 'inativo'])
+  status?: 'ativo' | 'inativo';
+}
