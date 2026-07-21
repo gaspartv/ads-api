@@ -1,0 +1,2403 @@
+[
+  {
+    "name": "Citizen Outfits",
+    "type": "Free",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Citizen_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Citizen_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Citizen_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Citizen_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Citizen_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Citizen_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Citizen_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Citizen_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Hunter Outfits",
+    "type": "Free",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Hunter_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Hunter_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Hunter_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Hunter_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Hunter_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Hunter_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Hunter_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Hunter_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Knight Outfits",
+    "type": "Free",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Knight_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Knight_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Knight_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Knight_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Knight_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Knight_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Knight_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Knight_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Mage Outfits",
+    "type": "Free",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Mage_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Mage_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Mage_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Mage_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Mage_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Mage_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Mage_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Mage_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Monk Outfits",
+    "type": "Free",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Monk_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Monk_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Monk_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Monk_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Monk_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Monk_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Monk_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Monk_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Barbarian Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Barbarian_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Barbarian_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Barbarian_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Barbarian_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Barbarian_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Barbarian_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Barbarian_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Barbarian_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Druid Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Druid_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Druid_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Druid_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Druid_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Druid_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Druid_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Druid_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Druid_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Nobleman Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Nobleman_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nobleman_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nobleman_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nobleman_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Nobleman_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nobleman_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nobleman_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nobleman_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Oriental Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Oriental_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Oriental_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Oriental_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Oriental_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Oriental_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Oriental_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Oriental_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Oriental_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Summoner Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Summoner_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Summoner_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Summoner_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Summoner_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Summoner_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Summoner_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Summoner_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Summoner_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Warrior Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Warrior_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Warrior_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Warrior_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Warrior_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Warrior_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Warrior_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Warrior_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Warrior_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Wizard Outfits",
+    "type": "Premium",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Wizard_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Wizard_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Wizard_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Wizard_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Wizard_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Wizard_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Wizard_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Wizard_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Afflicted Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Afflicted_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Afflicted_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Afflicted_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Afflicted_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Afflicted_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Afflicted_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Afflicted_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Afflicted_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Ancient Aucar Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Ancient_Aucar_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ancient_Aucar_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ancient_Aucar_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ancient_Aucar_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Ancient_Aucar_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ancient_Aucar_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ancient_Aucar_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ancient_Aucar_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Assassin Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Assassin_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Assassin_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Assassin_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Assassin_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Assassin_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Assassin_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Assassin_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Assassin_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Battle Mage Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Battle_Mage_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Battle_Mage_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Battle_Mage_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Battle_Mage_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Battle_Mage_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Battle_Mage_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Battle_Mage_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Battle_Mage_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Beggar Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Beggar_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beggar_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beggar_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beggar_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Beggar_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beggar_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beggar_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beggar_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Brotherhood of Bones Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Brotherhood_of_Bones_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Cave Explorer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Cave_Explorer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Cave_Explorer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Cave_Explorer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Cave_Explorer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Cave_Explorer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Cave_Explorer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Cave_Explorer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Cave_Explorer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Citizen of Issavi Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Citizen_of_Issavi_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Crystal Warlord Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Crystal_Warlord_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Crystal_Warlord_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Crystal_Warlord_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Crystal_Warlord_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Crystal_Warlord_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Crystal_Warlord_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Crystal_Warlord_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Crystal_Warlord_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Decaying Defender Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Decaying_Defender_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Decaying_Defender_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Decaying_Defender_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Decaying_Defender_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Decaying_Defender_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Decaying_Defender_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Decaying_Defender_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Decaying_Defender_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Deepling Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Deepling_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Deepling_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Deepling_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Deepling_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Deepling_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Deepling_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Deepling_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Deepling_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Demon Hunter Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Demon_Hunter_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Demon_Hunter_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Demon_Hunter_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Demon_Hunter_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Demon_Hunter_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Demon_Hunter_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Demon_Hunter_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Demon_Hunter_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Demon Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Demon_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Demon_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Demon_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Demon_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Demon_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Demon_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Demon_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Demon_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Discoverer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Discoverer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Discoverer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Discoverer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Discoverer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Discoverer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Discoverer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Discoverer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Discoverer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Draccoon Herald Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Draccoon_Herald_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Draccoon_Herald_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Draccoon_Herald_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Draccoon_Herald_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Draccoon_Herald_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Draccoon_Herald_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Draccoon_Herald_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Draccoon_Herald_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Dragon Slayer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Dragon_Slayer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dragon_Slayer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dragon_Slayer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dragon_Slayer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Dragon_Slayer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dragon_Slayer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dragon_Slayer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dragon_Slayer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Dream Warden Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Dream_Warden_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dream_Warden_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dream_Warden_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dream_Warden_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Dream_Warden_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dream_Warden_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dream_Warden_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dream_Warden_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Dream Warrior Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Dream_Warrior_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dream_Warrior_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dream_Warrior_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dream_Warrior_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Dream_Warrior_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dream_Warrior_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dream_Warrior_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dream_Warrior_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Elementalist Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Elementalist_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Elementalist_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Elementalist_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Elementalist_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Elementalist_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Elementalist_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Elementalist_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Elementalist_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Festive Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Festive_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Festive_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Festive_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Festive_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Festive_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Festive_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Festive_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Festive_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Fiend Slayer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Fiend_Slayer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fiend_Slayer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fiend_Slayer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fiend_Slayer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Fiend_Slayer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fiend_Slayer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fiend_Slayer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fiend_Slayer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Fire-Fighter Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Fire-Fighter_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fire-Fighter_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fire-Fighter_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fire-Fighter_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Fire-Fighter_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fire-Fighter_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fire-Fighter_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fire-Fighter_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Formal Dress Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Formal_Dress_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Formal_Dress_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Formal_Dress_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Formal_Dress_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Formal_Dress_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Formal_Dress_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Formal_Dress_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Formal_Dress_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Glooth Engineer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Glooth_Engineer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Glooth_Engineer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Glooth_Engineer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Glooth_Engineer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Glooth_Engineer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Glooth_Engineer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Glooth_Engineer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Glooth_Engineer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Golden Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Golden_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Golden_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Golden_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Golden_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Golden_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Golden_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Golden_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Golden_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Hand of the Inquisition Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Hand_of_the_Inquisition_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Illuminated Warrior Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Illuminated_Warrior_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Illuminator Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Illuminator_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Illuminator_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Illuminator_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Illuminator_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Illuminator_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Illuminator_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Illuminator_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Illuminator_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Insectoid Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Insectoid_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Insectoid_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Insectoid_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Insectoid_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Insectoid_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Insectoid_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Insectoid_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Insectoid_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Jester Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Jester_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Jester_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Jester_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Jester_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Jester_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Jester_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Jester_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Jester_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Makeshift Warrior Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Makeshift_Warrior_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Newly Wed Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Newly_Wed_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Newly_Wed_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Nightmare Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Nightmare_Knights_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nightmare_Knights_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nightmare_Knights_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nightmare_Knights_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Nightmare_Knights_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nightmare_Knights_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nightmare_Knights_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nightmare_Knights_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Norseman Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Norseman_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Norseman_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Norseman_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Norseman_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Norseman_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Norseman_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Norseman_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Norseman_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Orcsoberfest Garb Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Orcsoberfest_Garb_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Percht Raider Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Percht_Raider_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Percht_Raider_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Percht_Raider_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Percht_Raider_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Percht_Raider_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Percht_Raider_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Percht_Raider_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Percht_Raider_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Pirate Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Pirate_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pirate_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pirate_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pirate_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Pirate_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pirate_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pirate_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pirate_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Poltergeist Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Poltergeist_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Poltergeist_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Poltergeist_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Poltergeist_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Poltergeist_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Poltergeist_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Poltergeist_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Poltergeist_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Rascoohan Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Rascoohan_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rascoohan_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rascoohan_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rascoohan_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Rascoohan_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rascoohan_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rascoohan_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rascoohan_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Revenant Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Revenant_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Revenant_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Revenant_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Revenant_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Revenant_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Revenant_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Revenant_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Revenant_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Rift Warrior Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Rift_Warrior_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rift_Warrior_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rift_Warrior_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rift_Warrior_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Rift_Warrior_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rift_Warrior_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rift_Warrior_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rift_Warrior_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Rootwalker Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Rootwalker_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rootwalker_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rootwalker_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rootwalker_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Rootwalker_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rootwalker_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rootwalker_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rootwalker_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Royal Bounacean Advisor Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Bounacean_Advisor_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Royal Costume Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Costume_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Costume_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Costume_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Costume_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Costume_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Costume_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Costume_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Costume_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Shaman Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Shaman_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Shaman_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Shaman_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Shaman_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Shaman_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Shaman_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Shaman_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Shaman_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Soil Guardian Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Soil_Guardian_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Soil_Guardian_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Soil_Guardian_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Soil_Guardian_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Soil_Guardian_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Soil_Guardian_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Soil_Guardian_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Soil_Guardian_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Warmaster Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Warmaster_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Warmaster_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Warmaster_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Warmaster_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Warmaster_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Warmaster_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Warmaster_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Warmaster_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Wayfarer Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Wayfarer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Wayfarer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Wayfarer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Wayfarer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Wayfarer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Wayfarer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Wayfarer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Wayfarer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Yalaharian Outfits",
+    "type": "Quest",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Yalaharian_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Yalaharian_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Yalaharian_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Yalaharian_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Yalaharian_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Yalaharian_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Yalaharian_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Yalaharian_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Recruiter Outfits",
+    "type": "Special Offer",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Recruiter_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Recruiter_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Recruiter_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Recruiter_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Recruiter_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Recruiter_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Recruiter_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Recruiter_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Arbalester Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Arbalester_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Arbalester_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Arbalester_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Arbalester_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Arbalester_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Arbalester_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Arbalester_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Arbalester_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Arena Champion Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Arena_Champion_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Arena_Champion_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Arena_Champion_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Arena_Champion_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Arena_Champion_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Arena_Champion_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Arena_Champion_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Arena_Champion_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Armoured Archer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Armoured_Archer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Armoured_Archer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Armoured_Archer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Armoured_Archer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Armoured_Archer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Armoured_Archer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Armoured_Archer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Armoured_Archer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Bat Knight Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Bat_Knight_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Bat_Knight_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Bat_Knight_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Bat_Knight_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Bat_Knight_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Bat_Knight_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Bat_Knight_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Bat_Knight_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Beastmaster Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Beastmaster_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beastmaster_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beastmaster_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beastmaster_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Beastmaster_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beastmaster_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beastmaster_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beastmaster_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Beekeeper Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Beekeeper_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beekeeper_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beekeeper_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beekeeper_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Beekeeper_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Beekeeper_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Beekeeper_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Beekeeper_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Blade Dancer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Blade_Dancer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Blade_Dancer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Blade_Dancer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Blade_Dancer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Blade_Dancer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Blade_Dancer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Blade_Dancer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Blade_Dancer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Breezy Garb Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Breezy_Garb_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Breezy_Garb_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Breezy_Garb_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Breezy_Garb_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Breezy_Garb_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Breezy_Garb_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Breezy_Garb_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Breezy_Garb_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Celestial Avenger Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Celestial_Avenger_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Celestial_Avenger_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Celestial_Avenger_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Celestial_Avenger_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Celestial_Avenger_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Celestial_Avenger_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Celestial_Avenger_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Celestial_Avenger_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Ceremonial Garb Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ceremonial_Garb_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Champion Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Champion_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Champion_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Champion_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Champion_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Champion_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Champion_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Champion_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Champion_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Chaos Acolyte Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Chaos_Acolyte_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Conjurer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Conjurer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Conjurer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Conjurer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Conjurer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Conjurer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Conjurer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Conjurer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Conjurer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Darklight Evoker Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Darklight_Evoker_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Darklight_Evoker_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Darklight_Evoker_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Darklight_Evoker_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Darklight_Evoker_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Darklight_Evoker_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Darklight_Evoker_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Darklight_Evoker_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Death Herald Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Death_Herald_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Death_Herald_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Death_Herald_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Death_Herald_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Death_Herald_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Death_Herald_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Death_Herald_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Death_Herald_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Doom Knight Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Doom_Knight_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Doom_Knight_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Doom_Knight_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Doom_Knight_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Doom_Knight_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Doom_Knight_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Doom_Knight_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Doom_Knight_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Dragon Knight Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Dragon_Knight_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dragon_Knight_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dragon_Knight_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dragon_Knight_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Dragon_Knight_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Dragon_Knight_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Dragon_Knight_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Dragon_Knight_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Entrepreneur Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Entrepreneur_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Entrepreneur_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Entrepreneur_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Entrepreneur_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Entrepreneur_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Entrepreneur_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Entrepreneur_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Entrepreneur_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Evoker Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Evoker_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Evoker_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Evoker_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Evoker_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Evoker_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Evoker_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Evoker_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Evoker_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Fencer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Fencer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fencer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fencer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fencer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Fencer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Fencer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Fencer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Fencer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Field Surgeon Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Field_Surgeon_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Field_Surgeon_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Field_Surgeon_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Field_Surgeon_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Field_Surgeon_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Field_Surgeon_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Field_Surgeon_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Field_Surgeon_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Flamefury Mage Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Flamefury_Mage_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Flamefury_Mage_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Flamefury_Mage_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Flamefury_Mage_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Flamefury_Mage_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Flamefury_Mage_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Flamefury_Mage_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Flamefury_Mage_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Forest Warden Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Forest_Warden_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Forest_Warden_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Forest_Warden_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Forest_Warden_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Forest_Warden_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Forest_Warden_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Forest_Warden_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Forest_Warden_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Frost Tracer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Frost_Tracer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Frost_Tracer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Frost_Tracer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Frost_Tracer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Frost_Tracer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Frost_Tracer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Frost_Tracer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Frost_Tracer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Ghost Blade Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Ghost_Blade_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ghost_Blade_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ghost_Blade_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ghost_Blade_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Ghost_Blade_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ghost_Blade_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ghost_Blade_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ghost_Blade_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Grove Keeper Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Grove_Keeper_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Grove_Keeper_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Grove_Keeper_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Grove_Keeper_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Grove_Keeper_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Grove_Keeper_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Grove_Keeper_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Grove_Keeper_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Guidon Bearer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Guidon_Bearer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Guidon_Bearer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Guidon_Bearer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Guidon_Bearer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Guidon_Bearer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Guidon_Bearer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Guidon_Bearer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Guidon_Bearer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Herbalist Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Herbalist_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Herbalist_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Herbalist_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Herbalist_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Herbalist_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Herbalist_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Herbalist_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Herbalist_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Herder Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Herder_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Herder_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Herder_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Herder_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Herder_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Herder_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Herder_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Herder_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Jouster Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Jouster_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Jouster_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Jouster_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Jouster_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Jouster_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Jouster_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Jouster_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Jouster_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Lupine Warden Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Lupine_Warden_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Lupine_Warden_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Lupine_Warden_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Lupine_Warden_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Lupine_Warden_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Lupine_Warden_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Lupine_Warden_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Lupine_Warden_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Martial Artist Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Martial_Artist_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Martial_Artist_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Martial_Artist_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Martial_Artist_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Martial_Artist_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Martial_Artist_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Martial_Artist_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Martial_Artist_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Mercenary Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Mercenary_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Mercenary_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Mercenary_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Mercenary_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Mercenary_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Mercenary_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Mercenary_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Mercenary_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Merry Garb Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Merry_Garb_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Merry_Garb_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Merry_Garb_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Merry_Garb_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Merry_Garb_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Merry_Garb_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Merry_Garb_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Merry_Garb_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Moth Cape Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Moth_Cape_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Moth_Cape_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Moth_Cape_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Moth_Cape_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Moth_Cape_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Moth_Cape_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Moth_Cape_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Moth_Cape_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Necromancer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Necromancer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Necromancer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Necromancer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Necromancer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Necromancer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Necromancer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Necromancer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Necromancer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Nordic Chieftain Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Nordic_Chieftain_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Owl Keeper Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Owl_Keeper_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Owl_Keeper_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Owl_Keeper_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Owl_Keeper_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Owl_Keeper_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Owl_Keeper_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Owl_Keeper_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Owl_Keeper_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Pharaoh Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Pharaoh_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pharaoh_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pharaoh_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pharaoh_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Pharaoh_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pharaoh_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pharaoh_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pharaoh_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Philosopher Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Philosopher_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Philosopher_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Philosopher_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Philosopher_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Philosopher_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Philosopher_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Philosopher_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Philosopher_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Phoenix Evoker Outfit",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Phoenix_Evoker_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Pumpkin Mummy Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Pumpkin_Mummy_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Puppeteer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Puppeteer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Puppeteer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Puppeteer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Puppeteer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Puppeteer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Puppeteer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Puppeteer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Puppeteer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Ranger Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Ranger_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ranger_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ranger_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ranger_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Ranger_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Ranger_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Ranger_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Ranger_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Retro Citizen Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Citizen_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Citizen_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Hunter Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Hunter_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Hunter_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Knight Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Knight_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Knight_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Mage Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Mage_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Mage_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Nobleman Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Nobleman_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Nobleman_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Summoner Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Summoner_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Summoner_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Retro Warrior Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Warrior_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Retro_Warrior_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Royal Pumpkin Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Royal_Pumpkin_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Rune Master Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Rune_Master_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rune_Master_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rune_Master_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rune_Master_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Rune_Master_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Rune_Master_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Rune_Master_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Rune_Master_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Sea Dog Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Sea_Dog_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sea_Dog_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sea_Dog_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sea_Dog_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Sea_Dog_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sea_Dog_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sea_Dog_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sea_Dog_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Seaweaver Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Seaweaver_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Seaweaver_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Seaweaver_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Seaweaver_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Seaweaver_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Seaweaver_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Seaweaver_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Seaweaver_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Shadowlotus Disciple Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Shadowlotus_Disciple_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Siege Master Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Siege_Master_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Siege_Master_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Siege_Master_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Siege_Master_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Siege_Master_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Siege_Master_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Siege_Master_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Siege_Master_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Sinister Archer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Sinister_Archer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sinister_Archer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sinister_Archer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sinister_Archer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Sinister_Archer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sinister_Archer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sinister_Archer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sinister_Archer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Spirit Caller Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Spirit_Caller_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Spirit_Caller_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Spirit_Caller_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Spirit_Caller_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Spirit_Caller_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Spirit_Caller_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Spirit_Caller_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Spirit_Caller_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Sun Priest Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Sun_Priest_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sun_Priest_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sun_Priest_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sun_Priest_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Sun_Priest_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Sun_Priest_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Sun_Priest_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Sun_Priest_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Trailblazer Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Trailblazer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Trailblazer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Trailblazer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Trailblazer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Trailblazer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Trailblazer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Trailblazer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Trailblazer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Trophy Hunter Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Trophy_Hunter_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Trophy_Hunter_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Trophy_Hunter_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Trophy_Hunter_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Trophy_Hunter_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Trophy_Hunter_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Trophy_Hunter_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Trophy_Hunter_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Veteran Paladin Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Veteran_Paladin_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Veteran_Paladin_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Veteran_Paladin_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Veteran_Paladin_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Veteran_Paladin_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Veteran_Paladin_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Veteran_Paladin_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Veteran_Paladin_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Void Master Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Void_Master_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Void_Master_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Void_Master_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Void_Master_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Void_Master_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Void_Master_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Void_Master_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Void_Master_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Winged Druid Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Winged_Druid_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Winged_Druid_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Winged_Druid_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Winged_Druid_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Winged_Druid_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Winged_Druid_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Winged_Druid_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Winged_Druid_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Winter Warden Outfits",
+    "type": "Store",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Winter_Warden_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Winter_Warden_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Winter_Warden_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Winter_Warden_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Winter_Warden_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Winter_Warden_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Winter_Warden_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Winter_Warden_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Gamemaster Outfits",
+    "type": "Event",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Gamemaster_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Gamemaster_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+  {
+    "name": "Jersey Outfits",
+    "type": "Event",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Jersey_Female.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Jersey_Male.gif",
+        "addon_1": null,
+        "addon_2": null,
+        "full": null
+      }
+    }
+  },
+
+  {
+    "name": "Falconer Outfits",
+    "type": "Hunting Task",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Falconer_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Falconer_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Falconer_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Falconer_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Falconer_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Falconer_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Falconer_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Falconer_Male_Addon_3.gif"
+      }
+    }
+  },
+  {
+    "name": "Feral Trapper Outfits",
+    "type": "Hunting Task",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Feral_Trapper_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Feral_Trapper_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Feral_Trapper_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Feral_Trapper_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Feral_Trapper_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Feral_Trapper_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Feral_Trapper_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Feral_Trapper_Male_Addon_3.gif"
+      }
+    }
+  },
+
+  {
+    "name": "Lion of War Outfits",
+    "type": "Tibiadrome",
+    "gender": {
+      "female": {
+        "outfit": "/uploads/system/outfits/Outfit_Lion_of_War_Female.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Lion_of_War_Female_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Lion_of_War_Female_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Lion_of_War_Female_Addon_3.gif"
+      },
+      "male": {
+        "outfit": "/uploads/system/outfits/Outfit_Lion_of_War_Male.gif",
+        "addon_1": "/uploads/system/outfits/Outfit_Lion_of_War_Male_Addon_1.gif",
+        "addon_2": "/uploads/system/outfits/Outfit_Lion_of_War_Male_Addon_2.gif",
+        "full": "/uploads/system/outfits/Outfit_Lion_of_War_Male_Addon_3.gif"
+      }
+    }
+  }
+]
