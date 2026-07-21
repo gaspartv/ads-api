@@ -4,7 +4,6 @@ import {
   Get,
   HttpCode,
   HttpStatus,
-  Ip,
   Post,
   Req,
   Res,
@@ -16,6 +15,8 @@ import { IsPublic } from 'src/common/decorators/is_public.decorator';
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import { UserCreateDto } from './dtos/user.create.dto';
 import { AuthAdminGuard } from 'src/common/guards/auth-admin.guard';
+import { UserSign } from 'src/common/decorators/user.decorator';
+import type { User } from 'src/generated/prisma/client';
 
 @Controller('user')
 export class UserController {
@@ -25,8 +26,8 @@ export class UserController {
   @UseGuards(AuthAdminGuard)
   @Post('create')
   @HttpCode(HttpStatus.CREATED)
-  create(@Body() body: UserCreateDto) {
-    return this.service.create(body);
+  create(@Body() body: UserCreateDto, @Req() req: FastifyRequest) {
+    return this.service.create(body, (req as any).company.id);
   }
 
   @IsPublic()
@@ -39,13 +40,14 @@ export class UserController {
   ) {
     const ip = req.ip;
     const userAgent = req.headers['user-agent'] || '';
-    return this.service.signIn(body, ip, userAgent, res);
+    const companyId = (req as any).company.id;
+    return this.service.signIn(body, companyId, ip, userAgent, res);
   }
 
   @Get('is-admin')
   @HttpCode(HttpStatus.OK)
-  isAdmin(@Req() req: FastifyRequest) {
-    return this.service.isAdmin((req as any).user.id);
+  isAdmin(@UserSign() user: User) {
+    return this.service.isAdmin(user.id);
   }
 
   @Get('is-valid-auth')

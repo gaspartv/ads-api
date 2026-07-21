@@ -23,6 +23,45 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest<FastifyRequest>();
+
+    // Tenta pegar a URL do frontend (origin ou referer).
+    // Removemos request.headers.host para evitar que a API leia o próprio host,
+    // o que quebra o suporte a múltiplos frontends.
+    const origin = (request.headers.origin ||
+      request.headers.referer ||
+      request.headers['x-forwarded-host']) as string | undefined;
+
+    let code = '';
+    if (origin) {
+      try {
+        let urlString = origin;
+        if (!urlString.startsWith('http')) {
+          urlString = `http://${urlString}`;
+        }
+        const url = new URL(urlString);
+        const parts = url.hostname.split('.');
+
+        // Ignora subdomínios como 'www' ou 'api' (ex: api.thygas-coins.com.br vira thygas-coins)
+        if ((parts[0] === 'www' || parts[0] === 'api') && parts.length > 1) {
+          code = parts[1];
+        } else {
+          code = parts[0];
+        }
+      } catch (e) {
+        // ignore
+      }
+    }
+
+    const companyFound = await this.prisma.company.findUnique({
+      where: { code },
+    });
+    if (!companyFound) {
+      throw new UnauthorizedException('Empresa não cadastrada.');
+    }
+
+    (request as any)['company'] = companyFound;
+
     const isPublic = this.reflector.getAllAndOverride<boolean>(IS_PUBLIC_KEY, [
       context.getHandler(),
       context.getClass(),
@@ -30,8 +69,6 @@ export class AuthGuard implements CanActivate {
     if (isPublic) {
       return true;
     }
-
-    const request = context.switchToHttp().getRequest<FastifyRequest>();
 
     const response = context.switchToHttp().getResponse<FastifyReply>();
 

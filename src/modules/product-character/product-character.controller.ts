@@ -16,8 +16,10 @@ import { ProductCharacterCreateDto } from './dtos/product-character.create.dto';
 import { ProductCharacterListDto } from './dtos/product-character.list.dto';
 import { ProductCharacterEditDto } from './dtos/product-character.edit.dto';
 import { ProductCharacterReorderDto } from './dtos/product-character.reorder.dto';
-import { ImageReorderDto } from '../product/dtos/image.reorder.dto';
 import { IsPublic } from 'src/common/decorators/is_public.decorator';
+import type { Company } from 'src/generated/prisma/client';
+import { CompanySign } from 'src/common/decorators/company.decorator';
+import { ProductCharacterImageReorderDto } from './dtos/product-character.image-reorder.dto';
 
 @Controller('product-character')
 export class ProductCharacterController {
@@ -25,8 +27,8 @@ export class ProductCharacterController {
 
   @IsPublic()
   @Get('find/:slug/public')
-  findPublic(@Param('slug') slug: string) {
-    return this.service.findPublic(slug);
+  findPublic(@Param('slug') slug: string, @CompanySign() company: Company) {
+    return this.service.findPublic(slug, company.id);
   }
 
   @IsPublic()
@@ -37,8 +39,11 @@ export class ProductCharacterController {
 
   @IsAdminOnly()
   @Post('create')
-  async createCharacter(@Body() body: ProductCharacterCreateDto) {
-    return this.service.create(body);
+  async createCharacter(
+    @Body() body: ProductCharacterCreateDto,
+    @CompanySign() company: Company,
+  ) {
+    return this.service.create(body, company.id);
   }
 
   @IsAdminOnly()
@@ -51,9 +56,10 @@ export class ProductCharacterController {
   @Patch('edit/:characterId')
   edit(
     @Param('characterId') characterId: string,
+    @CompanySign() company: Company,
     @Body() body: ProductCharacterEditDto,
   ) {
-    return this.service.edit(characterId, body);
+    return this.service.edit(characterId, company.id, body);
   }
 
   @IsAdminOnly()
@@ -96,7 +102,7 @@ export class ProductCharacterController {
   @Patch('reorder/:characterId/images')
   reorderImages(
     @Param('characterId') characterId: string,
-    @Body() body: ImageReorderDto,
+    @Body() body: ProductCharacterImageReorderDto,
   ) {
     return this.service.reorderImages(characterId, body);
   }

@@ -26,12 +26,13 @@ export class LoggingInterceptor implements NestInterceptor {
 
     await this.prisma.log.create({
       data: {
-        userId: request.user?.id || null, // !TODO: implementar na autenticação a coleta dos dados do usuário
+        userId: request.user?.id || null,
         method: request.method,
         endpoint: request.url,
         statusCode: response.statusCode,
         request: request.body,
         response: responseBody,
+        companyId: request.company.id,
       },
     });
   }

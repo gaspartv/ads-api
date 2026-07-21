@@ -1,7 +1,8 @@
 export class JwtPayloadDto {
-  uid: string;
-  sid: string;
-  nenv: string;
-  exp: number;
-  iat: number;
+  uid: string; // user.id
+  sid: string; // session.id
+  nenv: string; // NODE_ENV
+  cid: string; // company.id
+  exp: number; // expiration time
+  iat: number; // issue at
 }

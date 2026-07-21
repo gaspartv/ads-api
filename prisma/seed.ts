@@ -1,4 +1,5 @@
 import { PrismaPg } from '@prisma/adapter-pg';
+import { generate } from 'rxjs';
 import { envConfig } from 'src/configs/env.config';
 import { generateCode } from 'src/functions/generate-code';
 import {
@@ -4701,49 +4702,39 @@ async function main() {
   }
 
   return await prisma.$transaction(async (tx) => {
-    await tx.company.create({
-      data: {
-        code: 'thygas_coins',
-        name: 'Thygas Coins',
-        whatsappNumber: '5532999730864',
-        description: 'Loja de Tibia Coins e serviços para Tibia.',
-      },
-    });
-
-    await tx.user.createMany({
+    await tx.module.createMany({
       data: [
         {
-          code: generateCode(),
-          email: 'cadastro@diegogaspar.dev.br',
-          firstName: 'Diego',
-          lastName: 'Gaspar',
-          passwordHash:
-            '$2b$10$mrWKjCbQVbLmgzNdDPmorek2Hd4CelGYHmSLQXlXiFBSc2NaGsWKC',
-          type: 'ADMIN',
+          id: 'cmrtkw96v0000iijmuufp65jy',
+          code: 'MD-001',
+          name: 'PRODUCT_TIBIA_COINS',
+          description: 'Compra e Venda de Tibia Coins.',
         },
         {
-          code: generateCode(),
-          email: 'admin@thygas-coins.com.br',
-          firstName: 'Thiago',
-          lastName: 'Thygas',
-          passwordHash:
-            '$2b$10$mrWKjCbQVbLmgzNdDPmorek2Hd4CelGYHmSLQXlXiFBSc2NaGsWKC',
-          type: 'ADMIN',
+          id: 'cmrtkw96v0001iijml0a51zde',
+          code: 'MD-002',
+          name: 'PRODUCT_ACCOUNT_LOYALTY',
+          description: 'Venda de Account com Loyalty.',
+        },
+        {
+          id: 'cmrtkw96v0002iijm5q4kytxt',
+          code: 'MD-003',
+          name: 'PRODUCT_CHARACTERS',
+          description: 'Venda de personagens.',
+        },
+        {
+          id: 'cmrtkw96v0003iijmu37eo40h',
+          code: 'MD-004',
+          name: 'REPORTS',
+          description: 'Relatórios.',
+        },
+        {
+          id: 'cmrtkw96v0004iijm2gihjhae',
+          code: 'MD-005',
+          name: 'SELLER_PANEL',
+          description: 'Painel de vendedores.',
         },
       ],
-    });
-
-    await tx.productTibiaCoins.create({
-      data: {
-        name: 'Tibia Coins',
-        slug: 'tibia-coins',
-        description:
-          'As Tibia Coins são uma moeda utilizada no jogo Tibia, criada pela empresa Cipsoft. Com elas, os jogadores podem comprar produtos na Store do jogo, como montarias, itens de decoração, poções e serviços como transferência de mundo. Além disso, as Tibia Coins podem ser vendidas no market ou utilizadas para comprar personagens no Bazaar. As Tibia Coins são transferíveis para outros jogadores e não ficam bloqueadas por um prazo específico, tornando-as uma opção prática para a compra de itens no jogo.',
-        amount: 0,
-        seoTitle: 'Comprar Tibia Coins Barato e Confiável | Tibia Coin Store',
-        seoDescription:
-          'Compre Tibia Coins de forma segura e rápida na Tibia Coin Store. Aqui você encontra os melhores preços e condições especiais para adquirir seus Tibia Coins e aproveitar ao máximo sua experiência no jogo.',
-      },
     });
 
     await tx.world.createMany({

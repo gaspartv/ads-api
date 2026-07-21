@@ -8,16 +8,102 @@ datasource db {
   provider = "postgresql"
 }
 
+model Module {
+  id          String  @id @default(cuid())
+  code        String  @unique
+  name        String
+  description String?
+
+  CompanyModules CompanyModule[]
+
+  @@map("modules")
+}
+
+model CompanyModule {
+  id        String    @id @default(cuid())
+  enabled   Boolean   @default(true)
+  startsAt  DateTime? @map("starts_at")
+  expiresAt DateTime? @map("expires_at")
+
+  Company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String  @map("company_id")
+
+  Module   Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  moduleId String @map("module_id")
+
+  @@unique([companyId, moduleId])
+  @@map("company_modules")
+}
+
+model Address {
+  id         String    @id @default(cuid())
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  deletedAt  DateTime? @map("deleted_at")
+  disabledAt DateTime? @map("disabled_at")
+
+  name         String
+  address      String?
+  number       String?
+  neighborhood String?
+  city         String?
+  state        String?
+  zip          String?
+  country      String?
+  reference    String?
+
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId String?  @map("company_id")
+
+  @@map("addresses")
+}
+
 model Company {
-  id             String    @id @default(cuid())
-  code           String    @unique
-  createdAt      DateTime  @default(now()) @map("created_at")
-  updatedAt      DateTime  @updatedAt @map("updated_at")
-  deletedAt      DateTime? @map("deleted_at")
-  disabledAt     DateTime? @map("disabled_at")
+  id         String    @id @default(cuid())
+  code       String    @unique
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  deletedAt  DateTime? @map("deleted_at")
+  disabledAt DateTime? @map("disabled_at")
+
+  // Dados da empresa
   name           String
   description    String?
-  whatsappNumber String    @unique @map("whatsapp_number")
+  slogan         String?
+  cnpj           String?
+  email          String  @unique
+  whatsappNumber String  @unique @map("whatsapp_number")
+
+  // Marca
+  logo    String?
+  favicon String?
+  banner  String?
+
+  // Theme
+
+  // Site
+  seoTitle       String? @map("seo_title")
+  seoDescription String? @map("seo_description")
+
+  // Comercial
+  businessHours Json? @map("business_hours")
+
+  // Recursos personalizados
+  settings       Json?
+  theme          Json?
+  socialNetworks Json?
+  integrations   Json?
+
+  Addresses Address[]
+
+  Orders                  Order[]
+  CompanyModules          CompanyModule[]
+  Users                   User[]
+  Logs                    Log[]
+  ProductTibiaCoins       ProductTibiaCoins[]
+  ProductCharacters       ProductCharacter[]
+  ProductAccountLoyalties ProductAccountLoyalty[]
+  Customers               Customer[]
 
   @@map("companies")
 }
@@ -40,26 +126,34 @@ model Session {
 }
 
 enum UserType {
-  CLIENT
   ADMIN
+  USER
 }
 
 model User {
   id           String    @id @default(cuid())
-  code         String    @unique
+  code         String
   createdAt    DateTime  @default(now()) @map("created_at")
   updatedAt    DateTime  @updatedAt @map("updated_at")
   deletedAt    DateTime? @map("deleted_at")
   disabledAt   DateTime? @map("disabled_at")
   firstName    String    @map("first_name")
   lastName     String?   @map("last_name")
-  email        String    @unique
+  email        String
   passwordHash String    @map("password_hash")
-  type         UserType  @default(CLIENT)
+  type         UserType  @default(USER)
+
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
 
   Logs     Log[]
   Sessions Session[]
 
+  OrdersCreated Order[] @relation("OrderCreatedBy")
+  OrdersUpdated Order[] @relation("OrderUpdatedBy")
+
+  @@unique([code, companyId])
+  @@unique([email, companyId])
   @@map("users")
 }
 
@@ -75,24 +169,39 @@ model Log {
   User   User?   @relation(fields: [userId], references: [id])
   userId String? @map("user_id")
 
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
   @@map("logs")
 }
 
+enum ProductTibiaCoinsType {
+  SELL
+  BUY
+}
+
 model ProductTibiaCoins {
-  id             String    @id @default(cuid())
-  createdAt      DateTime  @default(now()) @map("created_at")
-  updatedAt      DateTime  @updatedAt @map("updated_at")
-  disabledAt     DateTime? @map("disabled_at")
-  name           String    @default("Tibia Coins")
-  slug           String    @unique @default("tibia-coins")
+  id             String                @id @default(cuid())
+  createdAt      DateTime              @default(now()) @map("created_at")
+  updatedAt      DateTime              @updatedAt @map("updated_at")
+  disabledAt     DateTime?             @map("disabled_at")
+  type           ProductTibiaCoinsType @default(BUY)
+  name           String                @default("Tibia Coins")
+  slug           String                @default("tibia-coins")
   description    String?
-  amount         Int       @default(0)
-  seoTitle       String?   @map("seo_title")
-  seoDescription String?   @map("seo_description")
+  amount         Int                   @default(0)
+  seoTitle       String?               @map("seo_title")
+  seoDescription String?               @map("seo_description")
+  columns        Json
 
   Variables    ProductTibiaCoinsVariable[]
   StockBatches ProductTibiaCoinsStockBatch[]
+  OrderItems   OrderItem[]
 
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
+  @@unique([slug, companyId])
   @@map("product_tibia_coins")
 }
 
@@ -252,18 +361,20 @@ model MapCharacterOutfits {
 
 model ProductCharacter {
   id         String    @id @default(cuid())
-  code       String    @unique
+  code       String
   createdAt  DateTime  @default(now()) @map("created_at")
   updatedAt  DateTime  @updatedAt @map("updated_at")
   deletedAt  DateTime? @map("deleted_at")
   disabledAt DateTime? @map("disabled_at")
+  soldAt     DateTime? @map("sold_at")
   isFeatured Boolean   @default(false) @map("is_featured")
   order      Int       @default(0)
 
   // --- DADOS COMERCIAIS ---
   title                      String
-  slug                       String  @unique
+  slug                       String
   description                String?
+  costPrice                  Int     @default(0) @map("cost_price")
   price                      Int     @default(0)
   promotionalPrice           Int?    @map("promotional_price")
   priceTibiaCoins            Int?    @map("price_tibia_coins")
@@ -282,14 +393,14 @@ model ProductCharacter {
   worldId  String    @map("world_id")
 
   // --- SKILLS & COMBATE (Colunas separadas para facilitar filtros/indexação no front-end) ---
-  magicLevel       Int @default(0) @map("magic_level")
-  fistFighting     Int @default(10) @map("fist_fighting")
-  swordFighting    Int @default(10) @map("sword_fighting")
-  axeFighting      Int @default(10) @map("axe_fighting")
-  clubFighting     Int @default(10) @map("club_fighting")
-  distanceFighting Int @default(10) @map("distance_fighting")
-  shielding        Int @default(10) @map("shielding")
-  fishing          Int @default(10) @map("fishing")
+  magicLevel       Int  @default(0) @map("magic_level")
+  fistFighting     Int? @map("fist_fighting")
+  swordFighting    Int? @map("sword_fighting")
+  axeFighting      Int? @map("axe_fighting")
+  clubFighting     Int? @map("club_fighting")
+  distanceFighting Int? @map("distance_fighting")
+  shielding        Int? @map("shielding")
+  fishing          Int? @map("fishing")
 
   // --- GAMEPLAY & ATIVOS ---
   // CHARMS //
@@ -305,102 +416,53 @@ model ProductCharacter {
   safeAddress         Boolean   @default(true) @map("safe_address") // Conta sem endereço seguro
 
   metadata Json?
+  columns  Json
 
   Charms  Charm[]
   Outfits MapCharacterOutfits[]
   Mounts  Mount[]
   Images  Image[]
 
+  OrderItems OrderItem[]
+
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
+  @@unique([code, companyId])
+  @@unique([slug, companyId])
   @@map("product_characters")
 }
 
 model ProductAccountLoyalty {
-  id                         String    @id @default(cuid())
-  code                       String    @unique
-  createdAt                  DateTime  @default(now()) @map("created_at")
-  updatedAt                  DateTime  @updatedAt @map("updated_at")
-  deletedAt                  DateTime? @map("deleted_at")
-  disabledAt                 DateTime? @map("disabled_at")
+  id         String    @id @default(cuid())
+  code       String
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime  @updatedAt @map("updated_at")
+  deletedAt  DateTime? @map("deleted_at")
+  disabledAt DateTime? @map("disabled_at")
+  soldAt     DateTime? @map("sold_at")
+
   title                      String
   description                String?
-  points                     Int       @default(0)
-  percentage                 Int       @default(0)
+  points                     Int     @default(0)
+  percentage                 Int     @default(0)
+  costPrice                  Int     @default(0) @map("cost_price")
   price                      Int
-  promotionalPrice           Int?      @map("promotional_price")
-  priceTibiaCoins            Int       @map("price_tibia_coins")
-  promotionalPriceTibiaCoins Int?      @map("promotional_price_tibia_coins")
-  safeAddress                Boolean   @default(true) @map("safe_address")
-  hasRecoveryKey             Boolean   @default(false) @map("has_recovery_key")
+  promotionalPrice           Int?    @map("promotional_price")
+  priceTibiaCoins            Int     @map("price_tibia_coins")
+  promotionalPriceTibiaCoins Int?    @map("promotional_price_tibia_coins")
+  safeAddress                Boolean @default(true) @map("safe_address")
+  hasRecoveryKey             Boolean @default(false) @map("has_recovery_key")
   metadata                   Json?
+  columns                    Json
 
+  OrderItems OrderItem[]
+
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
+  @@unique([code, companyId])
   @@map("product_account_loyalty")
-}
-
-enum ProductType {
-  CHARACTER
-  ACCOUNT
-  TIBIA_COINS
-}
-
-model Product {
-  id               String      @id @default(cuid())
-  type             ProductType @default(TIBIA_COINS)
-  code             String      @unique
-  createdAt        DateTime    @default(now()) @map("created_at")
-  updatedAt        DateTime    @updatedAt @map("updated_at")
-  deletedAt        DateTime?   @map("deleted_at")
-  disabledAt       DateTime?   @map("disabled_at")
-  isFixed          Boolean     @default(false) @map("is_fixed")
-  featured         Boolean     @default(false)
-  order            Int         @default(0)
-  name             String
-  slug             String      @unique
-  description      String?
-  metadata         Json?
-  price            Int         @default(0)
-  promotionalPrice Int?
-  amount           Int         @default(0)
-  multiples        Int         @default(1)
-  seoTitle         String?
-  seoDescription   String?
-
-  Categories   Category[]
-  Images       Image[]
-  StockBatches StockBatch[]
-
-  @@map("products")
-}
-
-model StockBatch {
-  id            String  @id @default(cuid())
-  initialAmount Int     @map("initial_amount")
-  currentAmount Int     @map("current_amount")
-  costPrice     Int     @map("cost_price")
-  supplierName  String? @map("supplier_name")
-
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-
-  Product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-  productId String  @map("product_id")
-
-  @@map("stock_batches")
-}
-
-model Category {
-  id          String    @id @default(cuid())
-  code        String    @unique
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @updatedAt @map("updated_at")
-  deletedAt   DateTime? @map("deleted_at")
-  disabledAt  DateTime? @map("disabled_at")
-  name        String
-  description String?
-
-  Products Product[]
-  Images   Image[]
-
-  @@map("categories")
 }
 
 model Image {
@@ -409,15 +471,136 @@ model Image {
   index     Int      @default(0)
   url       String   @default("/uploads/system/no-image.jpg")
 
-  Category   Category? @relation(fields: [categoryId], references: [id])
-  categoryId String?   @map("category_id")
+  ProductCharacter   ProductCharacter? @relation(fields: [productCharacterId], references: [id])
+  productCharacterId String?           @map("product_character_id")
 
-  Product   Product? @relation(fields: [productId], references: [id])
-  productId String?  @map("product_id")
+  @@unique([index, productCharacterId])
+  @@map("images")
+}
+
+// --- SALES SYSTEM ---
+
+enum Currency {
+  BRL
+  TIBIA_COINS
+}
+
+enum PaymentMethod {
+  PIX
+  MANUAL
+  MERCADO_PAGO
+  STRIPE
+}
+
+enum OrderStatus {
+  WAITING_PAYMENT
+  PROCESSING
+  COMPLETED
+  CANCELED
+  REFUNDED
+}
+
+enum ProductType {
+  TIBIA_COINS
+  CHARACTER
+  ACCOUNT_LOYALTY
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  name           String
+  whatsappNumber String? @map("whatsapp_number")
+
+  Orders Order[]
+
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
+  @@map("customers")
+}
+
+model Order {
+  id        String   @id @default(cuid())
+  code      String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Multiempresa
+  Company   Company @relation(fields: [companyId], references: [id])
+  companyId String  @map("company_id")
+
+  // Cliente
+  Customer   Customer @relation(fields: [customerId], references: [id])
+  customerId String   @map("customer_id")
+
+  // Moeda e Pagamento
+  currency       Currency       @default(BRL)
+  paymentMethod  PaymentMethod? @map("payment_method")
+  paymentDetails Json?          @map("payment_details")
+
+  // Valores Financeiros
+  subtotalAmount  Int? @map("subtotal_amount")
+  discountAmount  Int? @map("discount_amount")
+  feeAmount       Int? @map("fee_amount")
+  shippingAmount  Int? @map("shipping_amount")
+  totalAmount     Int? @map("total_amount") // Em centavos BRL
+  totalTibiaCoins Int? @map("total_tibia_coins") // Em TC
+
+  // Custos e Lucro
+  totalCostAmount Int? @map("total_cost_amount")
+  profitAmount    Int? @map("profit_amount")
+
+  // Status e Datas
+  status      OrderStatus @default(WAITING_PAYMENT)
+  paidAt      DateTime?   @map("paid_at")
+  completedAt DateTime?   @map("completed_at")
+  canceledAt  DateTime?   @map("canceled_at")
+  refundedAt  DateTime?   @map("refunded_at")
+
+  // Auditoria
+  CreatedBy   User?   @relation("OrderCreatedBy", fields: [createdById], references: [id])
+  createdById String? @map("created_by_id")
+  UpdatedBy   User?   @relation("OrderUpdatedBy", fields: [updatedById], references: [id])
+  updatedById String? @map("updated_by_id")
+
+  // Itens da Venda
+  Items OrderItem[]
+
+  @@unique([code, companyId])
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+
+  Order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId String @map("order_id")
+
+  // Tipo de produto
+  productType ProductType @map("product_type")
+
+  // Valores no momento da compra (Congelados)
+  unitPrice      Int? @map("unit_price")
+  unitPriceCoins Int? @map("unit_price_coins")
+  unitCostPrice  Int? @map("unit_cost_price")
+  quantity       Int  @default(1)
+
+  // Snapshot
+  productSnapshot Json @map("product_snapshot")
+
+  // --- Relações Opcionais com os Produtos Originais ---
+  ProductTibiaCoins   ProductTibiaCoins? @relation(fields: [productTibiaCoinsId], references: [id])
+  productTibiaCoinsId String?            @map("product_tibia_coins_id")
 
   ProductCharacter   ProductCharacter? @relation(fields: [productCharacterId], references: [id])
   productCharacterId String?           @map("product_character_id")
 
-  @@unique([index, categoryId, productId, productCharacterId])
-  @@map("images")
+  ProductAccountLoyalty   ProductAccountLoyalty? @relation(fields: [productAccountLoyaltyId], references: [id])
+  productAccountLoyaltyId String?                @map("product_account_loyalty_id")
+
+  @@map("order_items")
 }

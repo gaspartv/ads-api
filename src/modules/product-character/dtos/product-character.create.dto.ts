@@ -93,24 +93,24 @@ export class ProductCharacterCreateDto {
   magicLevel: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  fistFighting: number;
+  @IsOptional()
+  fistFighting?: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  swordFighting: number;
+  @IsOptional()
+  swordFighting?: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  axeFighting: number;
+  @IsOptional()
+  axeFighting?: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  clubFighting: number;
+  @IsOptional()
+  clubFighting?: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  distanceFighting: number;
+  @IsOptional()
+  distanceFighting?: number;
 
   @IsNumber()
   @IsNotEmpty()

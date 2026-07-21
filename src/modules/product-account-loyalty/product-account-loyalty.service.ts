@@ -2,6 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/providers/prisma/prisma.service';
 import { ProductAccountLoyaltyListDto } from './dtos/product-account-loyalty.list.dto';
 import { Prisma } from 'src/generated/prisma/client';
+import { ProductAccountLoyaltyCreateDto } from './dtos/product-account-loyalty.create.dto';
+import { generateCode } from 'src/functions/generate-code';
+import { ProductAccountLoyaltyEditDto } from './dtos/product-account-loyalty.edit.dto';
 
 @Injectable()
 export class ProductAccountLoyaltyService {
@@ -50,5 +53,116 @@ export class ProductAccountLoyaltyService {
         totalPages: Math.ceil(total / limit),
       },
     };
+  }
+
+  async create(dto: ProductAccountLoyaltyCreateDto, companyId: string) {
+    let code: string;
+    let codeExists: any;
+    do {
+      code = generateCode();
+      codeExists = await this.prisma.productCharacter.findFirst({
+        where: { code, companyId },
+      });
+    } while (codeExists);
+
+    await this.prisma.productAccountLoyalty.create({
+      data: {
+        columns: {},
+        companyId,
+        code,
+        title: dto.title,
+        description: dto.description,
+        points: dto.points,
+        percentage: dto.percentage,
+        price: dto.price,
+        promotionalPrice: dto.promotionalPrice,
+        priceTibiaCoins: dto.priceTibiaCoins,
+        promotionalPriceTibiaCoins: dto.promotionalPriceTibiaCoins,
+        safeAddress: dto.safeAddress === 'true',
+        hasRecoveryKey: dto.hasRecoveryKey === 'true',
+        metadata: dto.metadata,
+      },
+    });
+
+    return { message: 'Conta de loyalty cadastrada com sucesso.' };
+  }
+
+  async edit(
+    productAccountLoyaltyId: string,
+    dto: ProductAccountLoyaltyEditDto,
+  ) {
+    const accLoyalty = await this.prisma.productAccountLoyalty.findUnique({
+      where: { id: productAccountLoyaltyId, deletedAt: null },
+    });
+    if (!accLoyalty) {
+      throw new Error('Conta de loyalty não encontrada.');
+    }
+
+    await this.prisma.productAccountLoyalty.update({
+      where: { id: productAccountLoyaltyId },
+      data: {
+        title: dto.title,
+        description: dto.description,
+        points: dto.points,
+        percentage: dto.percentage,
+        price: dto.price,
+        promotionalPrice: dto.promotionalPrice,
+        priceTibiaCoins: dto.priceTibiaCoins,
+        promotionalPriceTibiaCoins: dto.promotionalPriceTibiaCoins,
+        safeAddress: dto.safeAddress === 'true',
+        hasRecoveryKey: dto.hasRecoveryKey === 'true',
+        metadata: dto.metadata,
+      },
+    });
+
+    return { message: 'Conta de loyalty editada com sucesso.' };
+  }
+
+  async delete(productAccountLoyaltyId: string) {
+    const accLoyalty = await this.prisma.productAccountLoyalty.findUnique({
+      where: { id: productAccountLoyaltyId, deletedAt: null },
+    });
+    if (!accLoyalty) {
+      throw new Error('Conta de loyalty não encontrada.');
+    }
+
+    await this.prisma.productAccountLoyalty.update({
+      where: { id: productAccountLoyaltyId },
+      data: { deletedAt: new Date() },
+    });
+
+    return { message: 'Conta de loyalty deletada com sucesso.' };
+  }
+
+  async disable(productAccountLoyaltyId: string) {
+    const accLoyalty = await this.prisma.productAccountLoyalty.findUnique({
+      where: { id: productAccountLoyaltyId, deletedAt: null },
+    });
+    if (!accLoyalty) {
+      throw new Error('Conta de loyalty não encontrada.');
+    }
+
+    await this.prisma.productAccountLoyalty.update({
+      where: { id: productAccountLoyaltyId },
+      data: { disabledAt: new Date() },
+    });
+
+    return { message: 'Conta de loyalty desabilitada com sucesso.' };
+  }
+
+  async enable(productAccountLoyaltyId: string) {
+    const accLoyalty = await this.prisma.productAccountLoyalty.findUnique({
+      where: { id: productAccountLoyaltyId, deletedAt: null },
+    });
+    if (!accLoyalty) {
+      throw new Error('Conta de loyalty não encontrada.');
+    }
+
+    await this.prisma.productAccountLoyalty.update({
+      where: { id: productAccountLoyaltyId },
+      data: { disabledAt: null },
+    });
+
+    return { message: 'Conta de loyalty habilitada com sucesso.' };
   }
 }

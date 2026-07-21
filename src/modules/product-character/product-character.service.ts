@@ -9,7 +9,6 @@ import { ProductCharacterCreateDto } from './dtos/product-character.create.dto';
 import { ProductCharacterListDto } from './dtos/product-character.list.dto';
 import { ProductCharacterEditDto } from './dtos/product-character.edit.dto';
 import { ProductCharacterReorderDto } from './dtos/product-character.reorder.dto';
-import { ImageReorderDto } from '../product/dtos/image.reorder.dto';
 import { generateCode } from 'src/functions/generate-code';
 import { Prisma } from 'src/generated/prisma/client';
 import { envConfig } from 'src/configs/env.config';
@@ -19,6 +18,7 @@ import * as path from 'path';
 import * as util from 'util';
 import { pipeline } from 'stream';
 import { v4 as uuidv4 } from 'uuid';
+import { ProductCharacterImageReorderDto } from './dtos/product-character.image-reorder.dto';
 
 const pump = util.promisify(pipeline);
 
@@ -26,9 +26,9 @@ const pump = util.promisify(pipeline);
 export class ProductCharacterService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findPublic(slug: string) {
-    const character = await this.prisma.productCharacter.findUnique({
-      where: { slug },
+  async findPublic(slug: string, companyId: string) {
+    const character = await this.prisma.productCharacter.findFirst({
+      where: { slug, companyId },
       include: {
         Images: {
           select: {
@@ -165,13 +165,13 @@ export class ProductCharacterService {
     };
   }
 
-  async create(dto: ProductCharacterCreateDto) {
+  async create(dto: ProductCharacterCreateDto, companyId: string) {
     let code: string;
     let codeExists: any;
     do {
       code = generateCode();
-      codeExists = await this.prisma.productCharacter.findUnique({
-        where: { code },
+      codeExists = await this.prisma.productCharacter.findFirst({
+        where: { code, companyId },
       });
     } while (codeExists);
 
@@ -205,6 +205,8 @@ export class ProductCharacterService {
     await this.prisma.$transaction(async (tx) => {
       const productCharacter = await tx.productCharacter.create({
         data: {
+          columns: {},
+          companyId,
           code,
           slug,
           order,
@@ -258,7 +260,7 @@ export class ProductCharacterService {
     return { message: 'Registro de novo personagem feito com sucesso.' };
   }
 
-  async edit(id: string, dto: ProductCharacterEditDto) {
+  async edit(id: string, companyId: string, dto: ProductCharacterEditDto) {
     const character = await this.prisma.productCharacter.findUnique({
       where: { id },
     });
@@ -279,8 +281,8 @@ export class ProductCharacterService {
         .replace(/^-|-$/g, '')
         .slice(0, 200);
       slug = baseSlug;
-      let slugExists = await this.prisma.productCharacter.findUnique({
-        where: { slug },
+      let slugExists = await this.prisma.productCharacter.findFirst({
+        where: { slug, companyId },
       });
       if (slugExists && slugExists.id !== id) {
         slug = slug + '-' + generateCode();
@@ -503,7 +505,10 @@ export class ProductCharacterService {
     return { message: 'Imagem deletada com sucesso.' };
   }
 
-  async reorderImages(characterId: string, dto: ImageReorderDto) {
+  async reorderImages(
+    characterId: string,
+    dto: ProductCharacterImageReorderDto,
+  ) {
     const character = await this.prisma.productCharacter.findUnique({
       where: { id: characterId },
     });

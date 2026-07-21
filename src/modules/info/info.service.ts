@@ -20,4 +20,21 @@ export class InfoService {
   listMounts() {
     return this.prisma.mount.findMany();
   }
+
+  listModules(companyId: string) {
+    return this.prisma.company.findUnique({
+      where: { id: companyId },
+      include: {
+        CompanyModules: {
+          include: {
+            Module: true,
+          },
+          where: {
+            enabled: true,
+            OR: [{ expiresAt: null }, { expiresAt: { gte: new Date() } }],
+          },
+        },
+      },
+    });
+  }
 }

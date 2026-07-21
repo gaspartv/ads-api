@@ -16,12 +16,12 @@ export class UserService {
     private jwtService: JwtService,
   ) {}
 
-  async create(dto: UserCreateDto) {
+  async create(dto: UserCreateDto, companyId: string) {
     const email = await decrypt(dto.emailHash);
     const password = await decrypt(dto.passwordHash);
 
-    const user = await this.prisma.user.findUnique({
-      where: { email },
+    const user = await this.prisma.user.findFirst({
+      where: { email, companyId },
     });
 
     if (user) {
@@ -37,6 +37,7 @@ export class UserService {
         lastName: dto.lastName,
         email,
         passwordHash: hashedPassword,
+        companyId,
       },
     });
 
@@ -45,6 +46,7 @@ export class UserService {
 
   async signIn(
     dto: UserSignInDto,
+    companyId: string,
     ip: string,
     agent: string,
     res: FastifyReply,
@@ -52,10 +54,9 @@ export class UserService {
     const email = await decrypt(dto.emailHash);
     const password = await decrypt(dto.passwordHash);
 
-    const user = await this.prisma.user.findUnique({
-      where: { email },
+    const user = await this.prisma.user.findFirst({
+      where: { email, companyId },
     });
-
     if (!user) {
       throw new ConflictException('Credenciais invalidas.');
     }
@@ -88,6 +89,7 @@ export class UserService {
       const payload = {
         uid: user.id,
         sid: session.id,
+        cid: companyId,
         nenv: envConfig.NODE_ENV,
       };
 
