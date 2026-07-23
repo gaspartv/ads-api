@@ -12,14 +12,25 @@ export class CompanyController {
 
   @IsPublic()
   @Get('info/:code')
-  async getInfoByCode(@Param('code') code: string) {
-    console.log({ code });
+  getInfoByCode(@Param('code') code: string) {
     return this.service.getInfoByCode(code);
   }
 
   @IsAdminOnly()
+  @Patch('edit')
+  edit(@CompanySign() company: Company, @Body() body: any) {
+    return this.service.edit(company.id, body);
+  }
+
+  @IsAdminOnly()
+  @Get('my')
+  my(@CompanySign() company: Company) {
+    return this.service.my(company.id);
+  }
+
+  @IsAdminOnly()
   @Patch('theme')
-  async updateTheme(
+  updateTheme(
     @CompanySign() company: Company,
     @Body() body: UpdateCompanyThemeDto,
   ) {
