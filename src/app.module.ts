@@ -37,7 +37,12 @@ import { AdminSystemModule } from './modules/admin-system/admin-system.module';
     ConfigModule.forRoot({
       isGlobal: true,
       cache: true,
-      envFilePath: ['.env', '.env.development.local'],
+      envFilePath: [
+        process.env.DOTENV_CONFIG_PATH ||
+          (process.env.NODE_ENV === 'development'
+            ? '.env.development.local'
+            : '.env'),
+      ],
     }),
 
     JwtModule.register({

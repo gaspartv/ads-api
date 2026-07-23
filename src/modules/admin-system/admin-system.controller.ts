@@ -5,7 +5,6 @@ import { AdminSystemCompanyCreateDto } from './dtos/company/company.create.dto';
 import { IsPublic } from 'src/common/decorators/is_public.decorator';
 
 @UseGuards(AuthAdminGuard)
-@IsPublic()
 @Controller('admin-system')
 export class AdminSystemController {
   constructor(private readonly service: AdminSystemService) {}

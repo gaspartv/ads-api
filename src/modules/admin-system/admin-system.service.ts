@@ -23,6 +23,7 @@ export class AdminSystemService {
           logo: company.logo,
           favicon: company.favicon,
           banner: company.banner,
+          site: company.site,
           seoTitle: company.seoTitle,
           seoDescription: company.seoDescription,
           businessHours: company.businessHours as any,
@@ -60,12 +61,11 @@ export class AdminSystemService {
           firstName: user.firstName,
           lastName: user.lastName,
           passwordHash: hashedPassword,
+          type: user.type,
         },
       });
 
       for await (const module of companyModule) {
-        console.log({ module });
-
         await tx.companyModule.create({
           data: {
             companyId: companyCreate.id,

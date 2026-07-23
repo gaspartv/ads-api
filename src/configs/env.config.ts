@@ -1,6 +1,15 @@
 import { Logger } from '@nestjs/common';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import path from 'path';
 import * as z from 'zod/v4';
+
+const envFile =
+  process.env.DOTENV_CONFIG_PATH ||
+  (process.env.NODE_ENV === 'development'
+    ? '.env.development.local'
+    : '.env');
+
+dotenv.config({ path: path.resolve(process.cwd(), envFile), override: true });
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production']),

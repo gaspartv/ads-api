@@ -42,8 +42,13 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new LoggingInterceptor(new PrismaService()));
 
+  app.enableShutdownHooks();
+
   await app.listen(envConfig.PORT, '0.0.0.0', () => {
     console.log(`Application is running on: ${envConfig.PORT}`);
+    if (process.send) {
+      process.send('ready');
+    }
   });
 }
 bootstrap();

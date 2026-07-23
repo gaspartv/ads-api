@@ -97,6 +97,7 @@ CREATE TABLE "companies" (
     "logo" TEXT,
     "favicon" TEXT,
     "banner" TEXT,
+    "site" TEXT NOT NULL,
     "seo_title" TEXT,
     "seo_description" TEXT,
     "business_hours" JSONB,
@@ -447,6 +448,9 @@ CREATE UNIQUE INDEX "companies_email_key" ON "companies"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "companies_whatsapp_number_key" ON "companies"("whatsapp_number");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "companies_site_key" ON "companies"("site");
 
 -- CreateIndex
 CREATE INDEX "sessions_user_id_idx" ON "sessions"("user_id");

@@ -82,6 +82,7 @@ model Company {
   // Theme
 
   // Site
+  site           String  @unique
   seoTitle       String? @map("seo_title")
   seoDescription String? @map("seo_description")
 

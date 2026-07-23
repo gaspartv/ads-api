@@ -12,6 +12,7 @@ export class AdminSystemCompanyCreateDto {
     logo?: string;
     favicon?: string;
     banner?: string;
+    site: string;
     seoTitle?: string;
     seoDescription?: string;
     businessHours: {
