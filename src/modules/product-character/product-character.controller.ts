@@ -85,8 +85,9 @@ export class ProductCharacterController {
   uploadImage(
     @Param('characterId') characterId: string,
     @Req() req: FastifyRequest,
+    @CompanySign() company: Company,
   ) {
-    return this.service.uploadImage(characterId, req);
+    return this.service.uploadImage(characterId, company.code, req);
   }
 
   @IsAdminOnly()
@@ -94,8 +95,9 @@ export class ProductCharacterController {
   deleteImage(
     @Param('characterId') characterId: string,
     @Param('imageId') imageId: string,
+    @CompanySign() company: Company,
   ) {
-    return this.service.deleteImage(characterId, imageId);
+    return this.service.deleteImage(characterId, imageId, company.code);
   }
 
   @IsAdminOnly()

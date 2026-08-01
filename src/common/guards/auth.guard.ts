@@ -24,7 +24,6 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
     const request = context.switchToHttp().getRequest<FastifyRequest>();
-    console.log(request.url);
 
     if (request.url.startsWith('/admin-system')) {
       return true;
@@ -61,7 +60,6 @@ export class AuthGuard implements CanActivate {
     const companyFound = await this.prisma.company.findUnique({
       where: { code },
     });
-    console.log({ companyFound });
     if (!companyFound) {
       throw new UnauthorizedException('Empresa não cadastrada.');
     }

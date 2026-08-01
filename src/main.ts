@@ -7,7 +7,7 @@ import { AppModule } from './app.module';
 import { envConfig } from './configs/env.config';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { PrismaService } from './providers/prisma/prisma.service';
-import { ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import fastifyCookie from '@fastify/cookie';
 import fastifyMultipart from '@fastify/multipart';
 import * as path from 'path';
@@ -45,7 +45,7 @@ async function bootstrap() {
   app.enableShutdownHooks();
 
   await app.listen(envConfig.PORT, '0.0.0.0', () => {
-    console.log(`Application is running on: ${envConfig.PORT}`);
+    Logger.log(`Application is running on: ${envConfig.PORT}`, 'Bootstrap');
     if (process.send) {
       process.send('ready');
     }

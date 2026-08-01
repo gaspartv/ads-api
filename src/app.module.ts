@@ -15,6 +15,7 @@ import { ProductAccountLoyaltyModule } from './modules/product-account-loyalty/p
 import { OrderModule } from './modules/order/order.module';
 import { CustomerModule } from './modules/customer/customer.module';
 import { AdminSystemModule } from './modules/admin-system/admin-system.module';
+import { ResendModule } from './providers/resend/resend.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { AdminSystemModule } from './modules/admin-system/admin-system.module';
 
     // Provideres
     PrismaModule,
+    ResendModule,
 
     // System
     ConfigModule.forRoot({

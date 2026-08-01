@@ -5,9 +5,7 @@ import * as z from 'zod/v4';
 
 const envFile =
   process.env.DOTENV_CONFIG_PATH ||
-  (process.env.NODE_ENV === 'development'
-    ? '.env.development.local'
-    : '.env');
+  (process.env.NODE_ENV === 'development' ? '.env.development.local' : '.env');
 
 dotenv.config({ path: path.resolve(process.cwd(), envFile), override: true });
 
@@ -22,6 +20,7 @@ const envSchema = z.object({
   JWT_SECRET: z.string(),
   SESSION_EXPIRES_IN_DAY: z.coerce.number(),
   APP_SECRET_KEY: z.string(),
+  RESEND_API_KEY: z.string(),
 });
 
 const _env = envSchema.safeParse(process.env);

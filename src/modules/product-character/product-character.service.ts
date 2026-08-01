@@ -429,7 +429,11 @@ export class ProductCharacterService {
     return { message: 'Personagem deletado com sucesso.' };
   }
 
-  async uploadImage(characterId: string, req: FastifyRequest) {
+  async uploadImage(
+    characterId: string,
+    companyCode: string,
+    req: FastifyRequest,
+  ) {
     const character = await this.prisma.productCharacter.findUnique({
       where: { id: characterId },
       include: {
@@ -450,12 +454,21 @@ export class ProductCharacterService {
     }
 
     const ext = path.extname(data.filename) || '.jpg';
-    const filename = `${uuidv4()}${ext}`;
-    const filePath = path.join(process.cwd(), 'uploads', filename);
+    const filename = `${character.slug}-${Date.now()}${ext}`;
+    const uploadDir = path.join(
+      process.cwd(),
+      'uploads',
+      companyCode,
+      'characters',
+      character.code,
+    );
+    const filePath = path.join(uploadDir, filename);
+
+    await fs.promises.mkdir(uploadDir, { recursive: true });
 
     await pump(data.file, fs.createWriteStream(filePath));
 
-    const uploadedFileUrl = `/uploads/${filename}`;
+    const uploadedFileUrl = `/uploads/${companyCode}/characters/${character.code}/${filename}`;
 
     const index =
       character.Images.length > 0 ? character.Images[0].index + 1 : 0;
@@ -471,7 +484,7 @@ export class ProductCharacterService {
     return { message: 'Imagem do personagem enviada com sucesso.' };
   }
 
-  async deleteImage(characterId: string, imageId: string) {
+  async deleteImage(characterId: string, imageId: string, companyCode: string) {
     const imageCount = await this.prisma.image.count({
       where: { productCharacterId: characterId },
     });
@@ -490,9 +503,24 @@ export class ProductCharacterService {
       throw new NotFoundException('Imagem não encontrada.');
     }
 
+    const character = await this.prisma.productCharacter.findUnique({
+      where: { id: characterId },
+    });
+
+    if (!character) {
+      throw new NotFoundException('Personagem não encontrado.');
+    }
+
     const filename = image.url.split('/').pop();
     if (filename) {
-      const filePath = path.join(process.cwd(), 'uploads', filename);
+      const filePath = path.join(
+        process.cwd(),
+        'uploads',
+        companyCode,
+        'characters',
+        character.code,
+        filename,
+      );
       if (fs.existsSync(filePath)) {
         fs.unlinkSync(filePath);
       }
