@@ -5,6 +5,7 @@ import { IsAdminOnly } from 'src/common/decorators/is_admin_only.decorator';
 import { CompanySign } from 'src/common/decorators/company.decorator';
 import type { Company } from 'src/generated/prisma/client';
 import { UpdateCompanyThemeDto } from './dtos/update-company-theme.dto';
+import { UpdateBusinessHoursDto } from './dtos/update-business-hours.dto';
 import type { FastifyRequest } from 'fastify';
 
 @Controller('company')
@@ -42,6 +43,21 @@ export class CompanyController {
     @Body() body: UpdateCompanyThemeDto,
   ) {
     return this.service.updateTheme(company.id, body);
+  }
+
+  @IsAdminOnly()
+  @Get('business-hours')
+  getBusinessHours(@CompanySign() company: Company) {
+    return this.service.getBusinessHours(company.id);
+  }
+
+  @IsAdminOnly()
+  @Patch('business-hours')
+  updateBusinessHours(
+    @CompanySign() company: Company,
+    @Body() body: UpdateBusinessHoursDto,
+  ) {
+    return this.service.updateBusinessHours(company.id, body);
   }
 
   @IsAdminOnly()

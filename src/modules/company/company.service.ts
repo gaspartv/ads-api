@@ -5,6 +5,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from 'src/providers/prisma/prisma.service';
 import { UpdateCompanyThemeDto } from './dtos/update-company-theme.dto';
+import { UpdateBusinessHoursDto } from './dtos/update-business-hours.dto';
 import { CompanyEditDto } from './dtos/company.edit.dto';
 import type { FastifyRequest } from 'fastify';
 import * as fs from 'fs';
@@ -73,6 +74,12 @@ export class CompanyService {
         Addresses: true,
       },
     });
+    
+    if (!company) {
+      throw new NotFoundException('Empresa não encontrada.');
+    }
+    
+    return company;
   }
 
   async edit(companyId: string, dto: CompanyEditDto) {
@@ -169,6 +176,7 @@ export class CompanyService {
         site: true,
         seoTitle: true,
         seoDescription: true,
+        businessHours: true,
       },
     });
     if (!company) {
@@ -195,6 +203,29 @@ export class CompanyService {
         theme: true,
       },
     });
+  }
+
+  async getBusinessHours(companyId: string) {
+    const company = await this.prisma.company.findUnique({
+      where: { id: companyId },
+      select: { businessHours: true },
+    });
+    
+    if (!company) {
+      throw new NotFoundException('Empresa não encontrada.');
+    }
+    
+    return company.businessHours || {};
+  }
+
+  async updateBusinessHours(companyId: string, dto: UpdateBusinessHoursDto) {
+    const company = await this.prisma.company.update({
+      where: { id: companyId },
+      data: { businessHours: dto as any },
+      select: { businessHours: true },
+    });
+    
+    return company.businessHours;
   }
 
   private async uploadSystemImage(
