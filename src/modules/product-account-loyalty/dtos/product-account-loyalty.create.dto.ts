@@ -31,16 +31,16 @@ export class ProductAccountLoyaltyCreateDto {
   percentage: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  price: number;
+  @IsOptional()
+  price?: number;
 
   @IsNumber()
   @IsOptional()
   promotionalPrice?: number;
 
   @IsNumber()
-  @IsNotEmpty()
-  priceTibiaCoins: number;
+  @IsOptional()
+  priceTibiaCoins?: number;
 
   @IsNumber()
   @IsOptional()

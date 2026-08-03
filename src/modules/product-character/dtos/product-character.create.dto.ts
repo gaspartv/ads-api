@@ -88,37 +88,69 @@ export class ProductCharacterCreateDto {
   @IsNotEmpty()
   worldId: string;
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
-  magicLevel: string;
+  magicLevel: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  fistFighting?: string;
+  magicLevelExtra?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  swordFighting?: string;
+  fistFighting?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  axeFighting?: string;
+  fistFightingExtra?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  clubFighting?: string;
+  swordFighting?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  distanceFighting?: string;
+  swordFightingExtra?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  fishing?: string;
+  axeFighting?: number;
 
-  @IsString()
+  @IsNumber()
   @IsOptional()
-  shielding?: string;
+  axeFightingExtra?: number;
+
+  @IsNumber()
+  @IsOptional()
+  clubFighting?: number;
+
+  @IsNumber()
+  @IsOptional()
+  clubFightingExtra?: number;
+
+  @IsNumber()
+  @IsOptional()
+  distanceFighting?: number;
+
+  @IsNumber()
+  @IsOptional()
+  distanceFightingExtra?: number;
+
+  @IsNumber()
+  @IsOptional()
+  fishing?: number;
+
+  @IsNumber()
+  @IsOptional()
+  fishingExtra?: number;
+
+  @IsNumber()
+  @IsOptional()
+  shielding?: number;
+
+  @IsNumber()
+  @IsOptional()
+  shieldingExtra?: number;
 
   @IsNumber()
   @IsNotEmpty()
