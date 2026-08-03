@@ -24,4 +24,7 @@ export class ProductTibiaCoinsVariableUpdateDto {
   @IsOptional()
   @IsUrl()
   url?: string;
+
+  @IsString()
+  productTibiaCoinsId: string;
 }

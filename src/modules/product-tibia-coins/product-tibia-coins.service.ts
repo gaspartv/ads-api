@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/providers/prisma/prisma.service';
 import { Prisma, ProductTibiaCoinsType } from 'src/generated/prisma/client';
 import { ProductTibiaCoinsVariableDto } from './dtos/variables/variables.create.dto';
@@ -111,16 +115,21 @@ export class ProductTibiaCoinsService {
   }
 
   async createVariable(dto: ProductTibiaCoinsVariableDto) {
-    const productTibiaCoins = await this.prisma.productTibiaCoins.findFirst();
+    const productTibiaCoins = await this.prisma.productTibiaCoins.findUnique({
+      where: { id: dto.productTibiaCoinsId },
+    });
     if (!productTibiaCoins) {
       throw new BadRequestException('Produto Tibia Coins não encontrado');
     }
+
+    console.log({ productTibiaCoins });
 
     // Verifica se já existe algum range que se sobreponha ao novo
     const overlapping = await this.prisma.productTibiaCoinsVariable.findFirst({
       where: {
         min: { lte: dto.max },
         max: { gte: dto.min },
+        productTibiaCoinsId: productTibiaCoins.id,
       },
     });
 
@@ -134,10 +143,18 @@ export class ProductTibiaCoinsService {
       orderBy: { max: 'desc' },
     });
 
-    if (lowerRange && dto.price <= lowerRange.price) {
-      throw new BadRequestException(
-        `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
-      );
+    if (productTibiaCoins.type === 'SELL') {
+      if (lowerRange && dto.price <= lowerRange.price) {
+        throw new BadRequestException(
+          `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
+        );
+      }
+    } else {
+      if (lowerRange && dto.price >= lowerRange.price) {
+        throw new BadRequestException(
+          `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
+        );
+      }
     }
 
     // Busca o range imediatamente superior (que começa depois de max)
@@ -338,6 +355,9 @@ export class ProductTibiaCoinsService {
       }
     }
 
-    return { message: 'Imagem enviada com sucesso.', imageUrl: uploadedFileUrl };
+    return {
+      message: 'Imagem enviada com sucesso.',
+      imageUrl: uploadedFileUrl,
+    };
   }
 }
