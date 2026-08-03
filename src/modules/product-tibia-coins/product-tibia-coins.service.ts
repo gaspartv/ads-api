@@ -129,9 +129,6 @@ export class ProductTibiaCoinsService {
     if (!productTibiaCoins) {
       throw new BadRequestException('Produto Tibia Coins não encontrado');
     }
-
-    console.log({ productTibiaCoins });
-
     // Verifica se já existe algum range que se sobreponha ao novo
     const overlapping = await this.prisma.productTibiaCoinsVariable.findFirst({
       where: {
@@ -147,7 +144,10 @@ export class ProductTibiaCoinsService {
 
     // Busca o range imediatamente inferior (que termina antes de min)
     const lowerRange = await this.prisma.productTibiaCoinsVariable.findFirst({
-      where: { max: { lt: dto.min } },
+      where: {
+        max: { lt: dto.min },
+        productTibiaCoinsId: productTibiaCoins.id,
+      },
       orderBy: { max: 'desc' },
     });
 
@@ -160,21 +160,32 @@ export class ProductTibiaCoinsService {
     } else {
       if (lowerRange && dto.price >= lowerRange.price) {
         throw new BadRequestException(
-          `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
+          `O preço deve ser menor que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
         );
       }
     }
 
     // Busca o range imediatamente superior (que começa depois de max)
     const higherRange = await this.prisma.productTibiaCoinsVariable.findFirst({
-      where: { min: { gt: dto.max } },
+      where: {
+        min: { gt: dto.max },
+        productTibiaCoinsId: productTibiaCoins.id,
+      },
       orderBy: { min: 'asc' },
     });
 
-    if (higherRange && dto.price >= higherRange.price) {
-      throw new BadRequestException(
-        `O preço deve ser menor que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
-      );
+    if (productTibiaCoins.type === 'SELL') {
+      if (higherRange && dto.price >= higherRange.price) {
+        throw new BadRequestException(
+          `O preço deve ser menor que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
+        );
+      }
+    } else {
+      if (higherRange && dto.price <= higherRange.price) {
+        throw new BadRequestException(
+          `O preço deve ser maior que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
+        );
+      }
     }
 
     await this.prisma.productTibiaCoinsVariable.create({
@@ -183,7 +194,6 @@ export class ProductTibiaCoinsService {
         promotionalPrice: dto.promotionalPrice,
         min: dto.min,
         max: dto.max,
-        url: dto.url,
         description: dto.description,
         productTibiaCoinsId: productTibiaCoins.id,
       },
@@ -191,6 +201,13 @@ export class ProductTibiaCoinsService {
   }
 
   async updateVariable(id: string, dto: ProductTibiaCoinsVariableUpdateDto) {
+    const productTibiaCoins = await this.prisma.productTibiaCoins.findUnique({
+      where: { id: dto.productTibiaCoinsId },
+    });
+    if (!productTibiaCoins) {
+      throw new BadRequestException('Produto Tibia Coins não encontrado');
+    }
+
     const existingVar = await this.prisma.productTibiaCoinsVariable.findUnique({
       where: { id },
     });
@@ -210,7 +227,8 @@ export class ProductTibiaCoinsService {
           where: {
             min: { lte: max },
             max: { gte: min },
-            id: { not: id }, // Exclui a variável atual da busca
+            id: { not: id },
+            productTibiaCoinsId: productTibiaCoins.id,
           },
         },
       );
@@ -221,28 +239,52 @@ export class ProductTibiaCoinsService {
 
       // Busca o range imediatamente inferior (que termina antes de min)
       const lowerRange = await this.prisma.productTibiaCoinsVariable.findFirst({
-        where: { max: { lt: min }, id: { not: id } },
+        where: {
+          max: { lt: min },
+          id: { not: id },
+          productTibiaCoinsId: productTibiaCoins.id,
+        },
         orderBy: { max: 'desc' },
       });
 
-      if (lowerRange && price <= lowerRange.price) {
-        throw new BadRequestException(
-          `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
-        );
+      if (productTibiaCoins.type === 'SELL') {
+        if (lowerRange && price <= lowerRange.price) {
+          throw new BadRequestException(
+            `O preço deve ser maior que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
+          );
+        }
+      } else {
+        if (lowerRange && price >= lowerRange.price) {
+          throw new BadRequestException(
+            `O preço deve ser menor que o do range anterior (${lowerRange.min} a ${lowerRange.max} - Preço: ${lowerRange.price})`,
+          );
+        }
       }
 
       // Busca o range imediatamente superior (que começa depois de max)
       const higherRange = await this.prisma.productTibiaCoinsVariable.findFirst(
         {
-          where: { min: { gt: max }, id: { not: id } },
+          where: {
+            min: { gt: max },
+            id: { not: id },
+            productTibiaCoinsId: productTibiaCoins.id,
+          },
           orderBy: { min: 'asc' },
         },
       );
 
-      if (higherRange && price >= higherRange.price) {
-        throw new BadRequestException(
-          `O preço deve ser menor que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
-        );
+      if (productTibiaCoins.type === 'SELL') {
+        if (higherRange && price >= higherRange.price) {
+          throw new BadRequestException(
+            `O preço deve ser menor que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
+          );
+        }
+      } else {
+        if (higherRange && price <= higherRange.price) {
+          throw new BadRequestException(
+            `O preço deve ser maior que o do próximo range (${higherRange.min} a ${higherRange.max} - Preço: ${higherRange.price})`,
+          );
+        }
       }
     }
 
@@ -253,7 +295,6 @@ export class ProductTibiaCoinsService {
         promotionalPrice: dto.promotionalPrice,
         min: dto.min,
         max: dto.max,
-        url: dto.url,
         description: dto.description,
       },
     });
