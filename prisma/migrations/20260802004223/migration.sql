@@ -1,0 +1,10 @@
+-- AlterTable
+ALTER TABLE "product_characters" ALTER COLUMN "magic_level" SET DEFAULT '0',
+ALTER COLUMN "magic_level" SET DATA TYPE TEXT,
+ALTER COLUMN "fist_fighting" SET DATA TYPE TEXT,
+ALTER COLUMN "sword_fighting" SET DATA TYPE TEXT,
+ALTER COLUMN "axe_fighting" SET DATA TYPE TEXT,
+ALTER COLUMN "club_fighting" SET DATA TYPE TEXT,
+ALTER COLUMN "distance_fighting" SET DATA TYPE TEXT,
+ALTER COLUMN "shielding" SET DATA TYPE TEXT,
+ALTER COLUMN "fishing" SET DATA TYPE TEXT;

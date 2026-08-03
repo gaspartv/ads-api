@@ -394,14 +394,14 @@ model ProductCharacter {
   worldId  String    @map("world_id")
 
   // --- SKILLS & COMBATE (Colunas separadas para facilitar filtros/indexação no front-end) ---
-  magicLevel       Int  @default(0) @map("magic_level")
-  fistFighting     Int? @map("fist_fighting")
-  swordFighting    Int? @map("sword_fighting")
-  axeFighting      Int? @map("axe_fighting")
-  clubFighting     Int? @map("club_fighting")
-  distanceFighting Int? @map("distance_fighting")
-  shielding        Int? @map("shielding")
-  fishing          Int? @map("fishing")
+  magicLevel       String  @default("0") @map("magic_level")
+  fistFighting     String? @map("fist_fighting")
+  swordFighting    String? @map("sword_fighting")
+  axeFighting      String? @map("axe_fighting")
+  clubFighting     String? @map("club_fighting")
+  distanceFighting String? @map("distance_fighting")
+  shielding        String? @map("shielding")
+  fishing          String? @map("fishing")
 
   // --- GAMEPLAY & ATIVOS ---
   // CHARMS //

@@ -230,6 +230,7 @@ export class ProductCharacterService {
           axeFighting: dto.axeFighting,
           clubFighting: dto.clubFighting,
           distanceFighting: dto.distanceFighting,
+          fishing: dto.fishing,
           shielding: dto.shielding,
           charmPoints: dto.charmPoints,
           charmExpansion: dto.charmExpansion == 'true',
@@ -323,6 +324,7 @@ export class ProductCharacterService {
         axeFighting: dto.axeFighting ?? character.axeFighting,
         clubFighting: dto.clubFighting ?? character.clubFighting,
         distanceFighting: dto.distanceFighting ?? character.distanceFighting,
+        fishing: dto.fishing ?? character.fishing,
         shielding: dto.shielding ?? character.shielding,
         charmPoints: dto.charmPoints ?? character.charmPoints,
         charmExpansion:

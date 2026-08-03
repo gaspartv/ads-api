@@ -88,33 +88,37 @@ export class ProductCharacterCreateDto {
   @IsNotEmpty()
   worldId: string;
 
-  @IsNumber()
+  @IsString()
   @IsNotEmpty()
-  magicLevel: number;
+  magicLevel: string;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  fistFighting?: number;
+  fistFighting?: string;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  swordFighting?: number;
+  swordFighting?: string;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  axeFighting?: number;
+  axeFighting?: string;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  clubFighting?: number;
+  clubFighting?: string;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  distanceFighting?: number;
+  distanceFighting?: string;
 
-  @IsNumber()
+  @IsString()
+  @IsOptional()
+  fishing?: string;
+
+  @IsString()
   @IsNotEmpty()
-  shielding: number;
+  shielding: string;
 
   @IsNumber()
   @IsNotEmpty()

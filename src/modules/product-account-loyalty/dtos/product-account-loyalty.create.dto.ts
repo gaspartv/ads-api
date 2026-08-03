@@ -1,5 +1,6 @@
 import {
   IsBoolean,
+  IsEnum,
   IsNotEmpty,
   IsNumber,
   IsObject,
@@ -45,11 +46,11 @@ export class ProductAccountLoyaltyCreateDto {
   @IsOptional()
   promotionalPriceTibiaCoins?: number;
 
-  @IsBoolean()
+  @IsEnum(Boolean)
   @IsNotEmpty()
   safeAddress: Boolean;
 
-  @IsBoolean()
+  @IsEnum(Boolean)
   @IsNotEmpty()
   hasRecoveryKey: Boolean;
 
