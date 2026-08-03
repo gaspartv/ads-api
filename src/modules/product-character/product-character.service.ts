@@ -26,6 +26,28 @@ const pump = util.promisify(pipeline);
 export class ProductCharacterService {
   constructor(private readonly prisma: PrismaService) {}
 
+  /**
+   * Resolve a pictureUrl a partir do OutfitGender, usando o outfitId, gender e level.
+   */
+  private async resolvePictureUrl(
+    outfitId: string,
+    gender: string,
+    level: string,
+  ): Promise<string | null> {
+    const outfitGender = await this.prisma.outfitGender.findFirst({
+      where: { outfitId, gender: gender as any },
+    });
+
+    if (!outfitGender) return null;
+
+    if (level === 'FULL' && outfitGender.full) return outfitGender.full;
+    if (level === 'ADDON_TWO' && outfitGender.addonTwo)
+      return outfitGender.addonTwo;
+    if (level === 'ADDON_ONE' && outfitGender.addonOne)
+      return outfitGender.addonOne;
+    return outfitGender.outfit;
+  }
+
   async findPublic(slug: string, companyId: string) {
     const character = await this.prisma.productCharacter.findFirst({
       where: { slug, companyId },
@@ -126,7 +148,7 @@ export class ProductCharacterService {
 
     const characters = await this.prisma.productCharacter.findMany({
       where,
-      orderBy: { [orderBy]: orderType },
+      orderBy: [{ isFeatured: 'desc' }, { [orderBy]: orderType }],
       skip: (page - 1) * limit,
       take: limit,
       include: {
@@ -202,6 +224,17 @@ export class ProductCharacterService {
 
     const order = productOrder ? productOrder.order + 1 : 1;
 
+    // Resolve pictureUrl a partir do outfit selecionado
+    let pictureUrl = dto.pictureUrl;
+    if (dto.pictureOutfitId && dto.pictureOutfitLevel) {
+      const resolved = await this.resolvePictureUrl(
+        dto.pictureOutfitId,
+        dto.gender,
+        dto.pictureOutfitLevel,
+      );
+      if (resolved) pictureUrl = resolved;
+    }
+
     await this.prisma.$transaction(async (tx) => {
       const productCharacter = await tx.productCharacter.create({
         data: {
@@ -219,6 +252,7 @@ export class ProductCharacterService {
           promotionalPriceTibiaCoins: dto.promotionalPriceTibiaCoins,
           seoTitle: dto.seoTitle,
           seoDescription: dto.seoDescription,
+          ...(pictureUrl ? { pictureUrl } : {}),
           vocation: dto.vocation,
           level: dto.level,
           gender: dto.gender,
@@ -290,6 +324,20 @@ export class ProductCharacterService {
       }
     }
 
+    // Resolve pictureUrl a partir do outfit selecionado
+    const gender = dto.gender ?? character.gender;
+    let pictureUrl: string | undefined;
+    if (dto.pictureOutfitId && dto.pictureOutfitLevel) {
+      const resolved = await this.resolvePictureUrl(
+        dto.pictureOutfitId,
+        gender,
+        dto.pictureOutfitLevel,
+      );
+      if (resolved) pictureUrl = resolved;
+    } else if (dto.pictureUrl !== undefined) {
+      pictureUrl = dto.pictureUrl;
+    }
+
     await this.prisma.productCharacter.update({
       where: { id },
       data: {
@@ -355,6 +403,7 @@ export class ProductCharacterService {
           dto.safeAddress !== undefined
             ? dto.safeAddress === 'true'
             : character.safeAddress,
+        ...(pictureUrl !== undefined ? { pictureUrl } : {}),
         metadata: (dto.metadata !== undefined
           ? dto.metadata
           : character.metadata) as Prisma.InputJsonValue,

@@ -117,8 +117,8 @@ export class ProductCharacterCreateDto {
   fishing?: string;
 
   @IsString()
-  @IsNotEmpty()
-  shielding: string;
+  @IsOptional()
+  shielding?: string;
 
   @IsNumber()
   @IsNotEmpty()
@@ -129,17 +129,17 @@ export class ProductCharacterCreateDto {
   charmExpansion: Boolean;
 
   @IsArray()
-  @IsNotEmpty()
+  @IsOptional()
   charmsId: string[];
 
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => CharacterOutfitDto)
-  @IsNotEmpty()
+  @IsOptional()
   outfits: CharacterOutfitDto[];
 
   @IsArray()
-  @IsNotEmpty()
+  @IsOptional()
   mountsId: string[];
 
   @IsNumber()
@@ -165,6 +165,18 @@ export class ProductCharacterCreateDto {
   @IsEnum(Boolean)
   @IsNotEmpty()
   safeAddress: Boolean;
+
+  @IsString()
+  @IsOptional()
+  pictureUrl?: string;
+
+  @IsString()
+  @IsOptional()
+  pictureOutfitId?: string;
+
+  @IsString()
+  @IsOptional()
+  pictureOutfitLevel?: string;
 
   @IsOptional()
   @IsObject()

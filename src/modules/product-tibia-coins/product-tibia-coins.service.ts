@@ -110,8 +110,16 @@ export class ProductTibiaCoinsService {
     return { message: 'Produto Tibia Coins desabilitado com sucesso.' };
   }
 
+  // !TODO: Precisa retornar apenas os referentes a empresa
   async listVariables() {
-    return await this.prisma.productTibiaCoinsVariable.findMany();
+    return await this.prisma.productTibiaCoinsVariable.findMany({
+      where: {
+        disabledAt: null,
+      },
+      orderBy: {
+        min: 'asc',
+      },
+    });
   }
 
   async createVariable(dto: ProductTibiaCoinsVariableDto) {

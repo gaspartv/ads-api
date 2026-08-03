@@ -386,12 +386,13 @@ model ProductCharacter {
   seoDescription String? @map("seo_description")
 
   // --- DADOS GERAIS DO PERSONAGEM ---
-  vocation Vocations
-  level    Int
-  gender   Gender
-  loyalty  Int
-  World    World     @relation(fields: [worldId], references: [id])
-  worldId  String    @map("world_id")
+  pictureUrl String    @default("/uploads/system/no-image.jpg") @map("picture_url")
+  vocation   Vocations
+  level      Int
+  gender     Gender
+  loyalty    Int
+  World      World     @relation(fields: [worldId], references: [id])
+  worldId    String    @map("world_id")
 
   // --- SKILLS & COMBATE (Colunas separadas para facilitar filtros/indexação no front-end) ---
   magicLevel       String  @default("0") @map("magic_level")
