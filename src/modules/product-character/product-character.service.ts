@@ -173,6 +173,9 @@ export class ProductCharacterService {
     return {
       data: characters.map((character) => ({
         ...character,
+        pictureUrl: character.pictureUrl
+          ? envConfig.BACKEND_URL + character.pictureUrl
+          : null,
         Images: character.Images.map((image) => ({
           ...image,
           url: envConfig.BACKEND_URL + image.url,
