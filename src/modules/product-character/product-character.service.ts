@@ -77,6 +77,9 @@ export class ProductCharacterService {
 
     return {
       ...character,
+      pictureUrl: character?.pictureUrl
+        ? envConfig.BACKEND_URL + character?.pictureUrl
+        : null,
       Images: character?.Images.map((image) => ({
         ...image,
         url: envConfig.BACKEND_URL + image.url,
@@ -831,7 +834,10 @@ export class ProductCharacterService {
     return company?.cardContent || [];
   }
 
-  async editCardContent(companyId: string, dto: ProductCharacterCardContentDto) {
+  async editCardContent(
+    companyId: string,
+    dto: ProductCharacterCardContentDto,
+  ) {
     await this.prisma.company.update({
       where: { id: companyId },
       data: { cardContent: dto.cardContent },
