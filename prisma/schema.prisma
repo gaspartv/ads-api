@@ -94,6 +94,7 @@ model Company {
   theme          Json?
   socialNetworks Json?
   integrations   Json?
+  cardContent    Json? @map("card_content")
 
   Addresses Address[]
 
@@ -395,22 +396,22 @@ model ProductCharacter {
   worldId    String    @map("world_id")
 
   // --- SKILLS & COMBATE (Colunas separadas para facilitar filtros/indexação no front-end) ---
-  magicLevel            Int   @default(0) @map("magic_level")
-  magicLevelExtra       Int?  @map("magic_level_extra")
-  fistFighting          Int?  @map("fist_fighting")
-  fistFightingExtra     Int?  @map("fist_fighting_extra")
-  swordFighting         Int?  @map("sword_fighting")
-  swordFightingExtra    Int?  @map("sword_fighting_extra")
-  axeFighting           Int?  @map("axe_fighting")
-  axeFightingExtra      Int?  @map("axe_fighting_extra")
-  clubFighting          Int?  @map("club_fighting")
-  clubFightingExtra     Int?  @map("club_fighting_extra")
-  distanceFighting      Int?  @map("distance_fighting")
-  distanceFightingExtra Int?  @map("distance_fighting_extra")
-  shielding             Int?  @map("shielding")
-  shieldingExtra        Int?  @map("shielding_extra")
-  fishing               Int?  @map("fishing")
-  fishingExtra          Int?  @map("fishing_extra")
+  magicLevel            Int  @default(0) @map("magic_level")
+  magicLevelExtra       Int? @map("magic_level_extra")
+  fistFighting          Int? @map("fist_fighting")
+  fistFightingExtra     Int? @map("fist_fighting_extra")
+  swordFighting         Int? @map("sword_fighting")
+  swordFightingExtra    Int? @map("sword_fighting_extra")
+  axeFighting           Int? @map("axe_fighting")
+  axeFightingExtra      Int? @map("axe_fighting_extra")
+  clubFighting          Int? @map("club_fighting")
+  clubFightingExtra     Int? @map("club_fighting_extra")
+  distanceFighting      Int? @map("distance_fighting")
+  distanceFightingExtra Int? @map("distance_fighting_extra")
+  shielding             Int? @map("shielding")
+  shieldingExtra        Int? @map("shielding_extra")
+  fishing               Int? @map("fishing")
+  fishingExtra          Int? @map("fishing_extra")
 
   // --- GAMEPLAY & ATIVOS ---
   // CHARMS //
@@ -425,8 +426,8 @@ model ProductCharacter {
   hasRecoveryKey      Boolean   @default(false) @map("has_recovery_key") // Conta não registrada / RK em branco?
   safeAddress         Boolean   @default(true) @map("safe_address") // Conta sem endereço seguro
 
-  metadata Json?
-  columns  Json
+  metadata    Json?
+  columns     Json
 
   Charms  Charm[]
   Outfits MapCharacterOutfits[]

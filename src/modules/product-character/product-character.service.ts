@@ -9,8 +9,9 @@ import { ProductCharacterCreateDto } from './dtos/product-character.create.dto';
 import { ProductCharacterListDto } from './dtos/product-character.list.dto';
 import { ProductCharacterEditDto } from './dtos/product-character.edit.dto';
 import { ProductCharacterReorderDto } from './dtos/product-character.reorder.dto';
+import { ProductCharacterCardContentDto } from './dtos/product-character.card-content.dto';
 import { generateCode } from 'src/functions/generate-code';
-import { Prisma } from 'src/generated/prisma/client';
+import { BattleyeType, Prisma } from 'src/generated/prisma/client';
 import { envConfig } from 'src/configs/env.config';
 import type { FastifyRequest } from 'fastify';
 import * as fs from 'fs';
@@ -141,25 +142,34 @@ export class ProductCharacterService {
 
     if (pagination.minPrice || pagination.maxPrice) {
       const minPrice = pagination.minPrice ? Number(pagination.minPrice) : 0;
-      const maxPrice = pagination.maxPrice ? Number(pagination.maxPrice) : Number.MAX_SAFE_INTEGER;
+      const maxPrice = pagination.maxPrice
+        ? Number(pagination.maxPrice)
+        : Number.MAX_SAFE_INTEGER;
       where.AND = where.AND || [];
       (where.AND as any[]).push({
         OR: [
           { promotionalPrice: { gte: minPrice, lte: maxPrice } },
-          { promotionalPrice: null, price: { gte: minPrice, lte: maxPrice } }
-        ]
+          { promotionalPrice: null, price: { gte: minPrice, lte: maxPrice } },
+        ],
       });
     }
 
     if (pagination.minPriceTibiaCoins || pagination.maxPriceTibiaCoins) {
-      const minPriceTC = pagination.minPriceTibiaCoins ? Number(pagination.minPriceTibiaCoins) : 0;
-      const maxPriceTC = pagination.maxPriceTibiaCoins ? Number(pagination.maxPriceTibiaCoins) : Number.MAX_SAFE_INTEGER;
+      const minPriceTC = pagination.minPriceTibiaCoins
+        ? Number(pagination.minPriceTibiaCoins)
+        : 0;
+      const maxPriceTC = pagination.maxPriceTibiaCoins
+        ? Number(pagination.maxPriceTibiaCoins)
+        : Number.MAX_SAFE_INTEGER;
       where.AND = where.AND || [];
       (where.AND as any[]).push({
         OR: [
           { promotionalPriceTibiaCoins: { gte: minPriceTC, lte: maxPriceTC } },
-          { promotionalPriceTibiaCoins: null, priceTibiaCoins: { gte: minPriceTC, lte: maxPriceTC } }
-        ]
+          {
+            promotionalPriceTibiaCoins: null,
+            priceTibiaCoins: { gte: minPriceTC, lte: maxPriceTC },
+          },
+        ],
       });
     }
 
@@ -169,65 +179,107 @@ export class ProductCharacterService {
 
     if (pagination.minLevel || pagination.maxLevel) {
       where.level = {};
-      if (pagination.minLevel) (where.level as any).gte = Number(pagination.minLevel);
-      if (pagination.maxLevel) (where.level as any).lte = Number(pagination.maxLevel);
+      if (pagination.minLevel)
+        (where.level as any).gte = Number(pagination.minLevel);
+      if (pagination.maxLevel)
+        (where.level as any).lte = Number(pagination.maxLevel);
     }
     if (pagination.minLoyalty || pagination.maxLoyalty) {
       where.loyalty = {};
-      if (pagination.minLoyalty) (where.loyalty as any).gte = Number(pagination.minLoyalty);
-      if (pagination.maxLoyalty) (where.loyalty as any).lte = Number(pagination.maxLoyalty);
+      if (pagination.minLoyalty)
+        (where.loyalty as any).gte = Number(pagination.minLoyalty);
+      if (pagination.maxLoyalty)
+        (where.loyalty as any).lte = Number(pagination.maxLoyalty);
     }
     if (pagination.minCharmPoints || pagination.maxCharmPoints) {
       where.charmPoints = {};
-      if (pagination.minCharmPoints) (where.charmPoints as any).gte = Number(pagination.minCharmPoints);
-      if (pagination.maxCharmPoints) (where.charmPoints as any).lte = Number(pagination.maxCharmPoints);
+      if (pagination.minCharmPoints)
+        (where.charmPoints as any).gte = Number(pagination.minCharmPoints);
+      if (pagination.maxCharmPoints)
+        (where.charmPoints as any).lte = Number(pagination.maxCharmPoints);
     }
 
     if (pagination.minMagicLevel || pagination.maxMagicLevel) {
       where.magicLevel = {};
-      if (pagination.minMagicLevel) (where.magicLevel as any).gte = Number(pagination.minMagicLevel);
-      if (pagination.maxMagicLevel) (where.magicLevel as any).lte = Number(pagination.maxMagicLevel);
+      if (pagination.minMagicLevel)
+        (where.magicLevel as any).gte = Number(pagination.minMagicLevel);
+      if (pagination.maxMagicLevel)
+        (where.magicLevel as any).lte = Number(pagination.maxMagicLevel);
     }
     if (pagination.minFistFighting || pagination.maxFistFighting) {
       where.fistFighting = {};
-      if (pagination.minFistFighting) (where.fistFighting as any).gte = Number(pagination.minFistFighting);
-      if (pagination.maxFistFighting) (where.fistFighting as any).lte = Number(pagination.maxFistFighting);
+      if (pagination.minFistFighting)
+        (where.fistFighting as any).gte = Number(pagination.minFistFighting);
+      if (pagination.maxFistFighting)
+        (where.fistFighting as any).lte = Number(pagination.maxFistFighting);
     }
     if (pagination.minSwordFighting || pagination.maxSwordFighting) {
       where.swordFighting = {};
-      if (pagination.minSwordFighting) (where.swordFighting as any).gte = Number(pagination.minSwordFighting);
-      if (pagination.maxSwordFighting) (where.swordFighting as any).lte = Number(pagination.maxSwordFighting);
+      if (pagination.minSwordFighting)
+        (where.swordFighting as any).gte = Number(pagination.minSwordFighting);
+      if (pagination.maxSwordFighting)
+        (where.swordFighting as any).lte = Number(pagination.maxSwordFighting);
     }
     if (pagination.minAxeFighting || pagination.maxAxeFighting) {
       where.axeFighting = {};
-      if (pagination.minAxeFighting) (where.axeFighting as any).gte = Number(pagination.minAxeFighting);
-      if (pagination.maxAxeFighting) (where.axeFighting as any).lte = Number(pagination.maxAxeFighting);
+      if (pagination.minAxeFighting)
+        (where.axeFighting as any).gte = Number(pagination.minAxeFighting);
+      if (pagination.maxAxeFighting)
+        (where.axeFighting as any).lte = Number(pagination.maxAxeFighting);
     }
     if (pagination.minClubFighting || pagination.maxClubFighting) {
       where.clubFighting = {};
-      if (pagination.minClubFighting) (where.clubFighting as any).gte = Number(pagination.minClubFighting);
-      if (pagination.maxClubFighting) (where.clubFighting as any).lte = Number(pagination.maxClubFighting);
+      if (pagination.minClubFighting)
+        (where.clubFighting as any).gte = Number(pagination.minClubFighting);
+      if (pagination.maxClubFighting)
+        (where.clubFighting as any).lte = Number(pagination.maxClubFighting);
     }
     if (pagination.minDistanceFighting || pagination.maxDistanceFighting) {
       where.distanceFighting = {};
-      if (pagination.minDistanceFighting) (where.distanceFighting as any).gte = Number(pagination.minDistanceFighting);
-      if (pagination.maxDistanceFighting) (where.distanceFighting as any).lte = Number(pagination.maxDistanceFighting);
+      if (pagination.minDistanceFighting)
+        (where.distanceFighting as any).gte = Number(
+          pagination.minDistanceFighting,
+        );
+      if (pagination.maxDistanceFighting)
+        (where.distanceFighting as any).lte = Number(
+          pagination.maxDistanceFighting,
+        );
     }
     if (pagination.minShielding || pagination.maxShielding) {
       where.shielding = {};
-      if (pagination.minShielding) (where.shielding as any).gte = Number(pagination.minShielding);
-      if (pagination.maxShielding) (where.shielding as any).lte = Number(pagination.maxShielding);
+      if (pagination.minShielding)
+        (where.shielding as any).gte = Number(pagination.minShielding);
+      if (pagination.maxShielding)
+        (where.shielding as any).lte = Number(pagination.maxShielding);
     }
     if (pagination.minFishing || pagination.maxFishing) {
       where.fishing = {};
-      if (pagination.minFishing) (where.fishing as any).gte = Number(pagination.minFishing);
-      if (pagination.maxFishing) (where.fishing as any).lte = Number(pagination.maxFishing);
+      if (pagination.minFishing)
+        (where.fishing as any).gte = Number(pagination.minFishing);
+      if (pagination.maxFishing)
+        (where.fishing as any).lte = Number(pagination.maxFishing);
     }
 
-    if (pagination.charmExpansion) where.charmExpansion = pagination.charmExpansion === 'true';
-    if (pagination.transferable) where.transferable = pagination.transferable === 'true';
-    if (pagination.hasRecoveryKey) where.hasRecoveryKey = pagination.hasRecoveryKey === 'true';
-    if (pagination.safeAddress) where.safeAddress = pagination.safeAddress === 'true';
+    if (pagination.charmExpansion)
+      where.charmExpansion = pagination.charmExpansion === 'true';
+    if (pagination.transferable)
+      where.transferable = pagination.transferable === 'true';
+    if (pagination.hasRecoveryKey)
+      where.hasRecoveryKey = pagination.hasRecoveryKey === 'true';
+    if (pagination.safeAddress)
+      where.safeAddress = pagination.safeAddress === 'true';
+
+    if (pagination.battleye) {
+      where.World = {
+        battleye: pagination.battleye,
+      };
+    }
+
+    if (pagination.pvpType) {
+      where.World = {
+        pvpType: pagination.pvpType,
+      };
+    }
 
     const orderBy = pagination.orderBy || 'order';
     const orderType = pagination.orderType || 'asc';
@@ -468,21 +520,45 @@ export class ProductCharacterService {
         loyalty: dto.loyalty ?? character.loyalty,
         worldId: dto.worldId ?? character.worldId,
         magicLevel: dto.magicLevel ?? character.magicLevel,
-        magicLevelExtra: dto.magicLevelExtra !== undefined ? dto.magicLevelExtra : character.magicLevelExtra,
+        magicLevelExtra:
+          dto.magicLevelExtra !== undefined
+            ? dto.magicLevelExtra
+            : character.magicLevelExtra,
         fistFighting: dto.fistFighting ?? character.fistFighting,
-        fistFightingExtra: dto.fistFightingExtra !== undefined ? dto.fistFightingExtra : character.fistFightingExtra,
+        fistFightingExtra:
+          dto.fistFightingExtra !== undefined
+            ? dto.fistFightingExtra
+            : character.fistFightingExtra,
         swordFighting: dto.swordFighting ?? character.swordFighting,
-        swordFightingExtra: dto.swordFightingExtra !== undefined ? dto.swordFightingExtra : character.swordFightingExtra,
+        swordFightingExtra:
+          dto.swordFightingExtra !== undefined
+            ? dto.swordFightingExtra
+            : character.swordFightingExtra,
         axeFighting: dto.axeFighting ?? character.axeFighting,
-        axeFightingExtra: dto.axeFightingExtra !== undefined ? dto.axeFightingExtra : character.axeFightingExtra,
+        axeFightingExtra:
+          dto.axeFightingExtra !== undefined
+            ? dto.axeFightingExtra
+            : character.axeFightingExtra,
         clubFighting: dto.clubFighting ?? character.clubFighting,
-        clubFightingExtra: dto.clubFightingExtra !== undefined ? dto.clubFightingExtra : character.clubFightingExtra,
+        clubFightingExtra:
+          dto.clubFightingExtra !== undefined
+            ? dto.clubFightingExtra
+            : character.clubFightingExtra,
         distanceFighting: dto.distanceFighting ?? character.distanceFighting,
-        distanceFightingExtra: dto.distanceFightingExtra !== undefined ? dto.distanceFightingExtra : character.distanceFightingExtra,
+        distanceFightingExtra:
+          dto.distanceFightingExtra !== undefined
+            ? dto.distanceFightingExtra
+            : character.distanceFightingExtra,
         fishing: dto.fishing ?? character.fishing,
-        fishingExtra: dto.fishingExtra !== undefined ? dto.fishingExtra : character.fishingExtra,
+        fishingExtra:
+          dto.fishingExtra !== undefined
+            ? dto.fishingExtra
+            : character.fishingExtra,
         shielding: dto.shielding ?? character.shielding,
-        shieldingExtra: dto.shieldingExtra !== undefined ? dto.shieldingExtra : character.shieldingExtra,
+        shieldingExtra:
+          dto.shieldingExtra !== undefined
+            ? dto.shieldingExtra
+            : character.shieldingExtra,
         charmPoints: dto.charmPoints ?? character.charmPoints,
         charmExpansion:
           dto.charmExpansion !== undefined
@@ -745,5 +821,21 @@ export class ProductCharacterService {
     );
 
     return { message: 'Personagens reordenados com sucesso.' };
+  }
+
+  async getCardContent(companyId: string) {
+    const company = await this.prisma.company.findUnique({
+      where: { id: companyId },
+      select: { cardContent: true },
+    });
+    return company?.cardContent || [];
+  }
+
+  async editCardContent(companyId: string, dto: ProductCharacterCardContentDto) {
+    await this.prisma.company.update({
+      where: { id: companyId },
+      data: { cardContent: dto.cardContent },
+    });
+    return { message: 'Conteúdo do card atualizado com sucesso.' };
   }
 }

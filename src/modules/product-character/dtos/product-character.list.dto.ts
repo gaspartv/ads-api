@@ -1,5 +1,6 @@
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { PaginationDto } from 'src/common/pagination/pagination.dto';
+import { BattleyeType, PvpType } from 'src/generated/prisma/enums';
 
 export class ProductCharacterListDto extends PaginationDto {
   @IsOptional()
@@ -145,4 +146,12 @@ export class ProductCharacterListDto extends PaginationDto {
   @IsOptional()
   @IsEnum(['true', 'false'])
   safeAddress?: 'true' | 'false';
+
+  @IsEnum(BattleyeType)
+  @IsOptional()
+  battleye?: BattleyeType;
+
+  @IsEnum(PvpType)
+  @IsOptional()
+  pvpType?: PvpType;
 }

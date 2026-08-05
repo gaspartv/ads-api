@@ -16,6 +16,7 @@ import { ProductCharacterCreateDto } from './dtos/product-character.create.dto';
 import { ProductCharacterListDto } from './dtos/product-character.list.dto';
 import { ProductCharacterEditDto } from './dtos/product-character.edit.dto';
 import { ProductCharacterReorderDto } from './dtos/product-character.reorder.dto';
+import { ProductCharacterCardContentDto } from './dtos/product-character.card-content.dto';
 import { IsPublic } from 'src/common/decorators/is_public.decorator';
 import type { Company } from 'src/generated/prisma/client';
 import { CompanySign } from 'src/common/decorators/company.decorator';
@@ -113,5 +114,20 @@ export class ProductCharacterController {
   @Patch('reorder')
   reorderCharacters(@Body() body: ProductCharacterReorderDto) {
     return this.service.reorderCharacters(body);
+  }
+
+  @IsAdminOnly()
+  @Get('card-content')
+  getCardContent(@CompanySign() company: Company) {
+    return this.service.getCardContent(company.id);
+  }
+
+  @IsAdminOnly()
+  @Patch('card-content')
+  editCardContent(
+    @CompanySign() company: Company,
+    @Body() body: ProductCharacterCardContentDto,
+  ) {
+    return this.service.editCardContent(company.id, body);
   }
 }

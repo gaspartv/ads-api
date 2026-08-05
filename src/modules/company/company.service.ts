@@ -46,6 +46,7 @@ export class CompanyService {
         favicon: true,
         banner: true,
         theme: true,
+        cardContent: true,
       },
     });
 
@@ -74,11 +75,11 @@ export class CompanyService {
         Addresses: true,
       },
     });
-    
+
     if (!company) {
       throw new NotFoundException('Empresa não encontrada.');
     }
-    
+
     return company;
   }
 
@@ -210,11 +211,11 @@ export class CompanyService {
       where: { id: companyId },
       select: { businessHours: true },
     });
-    
+
     if (!company) {
       throw new NotFoundException('Empresa não encontrada.');
     }
-    
+
     return company.businessHours || {};
   }
 
@@ -224,7 +225,7 @@ export class CompanyService {
       data: { businessHours: dto as any },
       select: { businessHours: true },
     });
-    
+
     return company.businessHours;
   }
 
