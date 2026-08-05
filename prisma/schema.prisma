@@ -94,7 +94,7 @@ model Company {
   theme          Json?
   socialNetworks Json?
   integrations   Json?
-  cardContent    Json? @map("card_content")
+  cardContent    Json? @default("{}") @map("card_content")
 
   Addresses Address[]
 
@@ -426,8 +426,8 @@ model ProductCharacter {
   hasRecoveryKey      Boolean   @default(false) @map("has_recovery_key") // Conta não registrada / RK em branco?
   safeAddress         Boolean   @default(true) @map("safe_address") // Conta sem endereço seguro
 
-  metadata    Json?
-  columns     Json
+  metadata Json?
+  columns  Json
 
   Charms  Charm[]
   Outfits MapCharacterOutfits[]
