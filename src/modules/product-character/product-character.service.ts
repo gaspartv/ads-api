@@ -287,7 +287,7 @@ export class ProductCharacterService {
     const orderBy = pagination.orderBy || 'order';
     const orderType = pagination.orderType || 'asc';
     const page = pagination.page ? Number(pagination.page) : 1;
-    const limit = pagination.limit ? Number(pagination.limit) : 10;
+    const limit = pagination.limit ? Number(pagination.limit) : 9;
 
     const total = await this.prisma.productCharacter.count({ where });
 
